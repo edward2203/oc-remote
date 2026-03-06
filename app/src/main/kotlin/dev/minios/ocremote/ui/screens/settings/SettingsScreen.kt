@@ -76,7 +76,6 @@ fun SettingsScreen(
     val reconnectMode by viewModel.reconnectMode.collectAsState()
     val keepScreenOn by viewModel.keepScreenOn.collectAsState()
     val silentNotifications by viewModel.silentNotifications.collectAsState()
-    val showShellButton by viewModel.showShellButton.collectAsState()
     val compressImageAttachments by viewModel.compressImageAttachments.collectAsState()
     val imageAttachmentMaxLongSide by viewModel.imageAttachmentMaxLongSide.collectAsState()
     val imageAttachmentWebpQuality by viewModel.imageAttachmentWebpQuality.collectAsState()
@@ -340,23 +339,6 @@ fun SettingsScreen(
                     )
                 },
                 modifier = Modifier.clickable { viewModel.setKeepScreenOn(!keepScreenOn) }
-            )
-
-            // Show shell mode button
-            ListItem(
-                headlineContent = { Text(stringResource(R.string.settings_show_shell_button)) },
-                supportingContent = { Text(stringResource(R.string.settings_show_shell_button_desc)) },
-                leadingContent = {
-                    Icon(Icons.Default.Terminal, contentDescription = null)
-                },
-                trailingContent = {
-                    Switch(
-                        checked = showShellButton,
-                        onCheckedChange = { viewModel.setShowShellButton(it) },
-                        colors = switchColors
-                    )
-                },
-                modifier = Modifier.clickable { viewModel.setShowShellButton(!showShellButton) }
             )
 
             // Optimize image attachments

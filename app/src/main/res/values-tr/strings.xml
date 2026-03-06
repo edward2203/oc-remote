@@ -343,8 +343,8 @@
     <string name="chat_terminal_clear">Temizle</string>
     <string name="chat_terminal_connect_failed">Terminal açılamadı</string>
     <string name="chat_terminal_tap_keyboard">Klavye açmak için dokunun</string>
-    <string name="settings_show_shell_button">Kabuk butonunu göster</string>
-    <string name="settings_show_shell_button_desc">Sohbette ek butonunun yanında kabuk modu geçişini göster</string>
+    <string name="settings_show_shell_button">Kabuk düğmesini göster</string>
+    <string name="settings_show_shell_button_desc">Kabuk düğmesini gösterme ayarı</string>
     <string name="server_settings_providers">Sağlayıcılar</string>
     <string name="server_settings_providers_desc">Bu sunucu için sağlayıcıları etkinleştir veya devre dışı bırak</string>
     <string name="server_settings_providers_connected">Bağlandı</string>
@@ -458,4 +458,5 @@ Token: ~%4$d -&gt; ~%5$d</string>
     <string name="home_local_launch_options_title">Başlatma seçenekleri</string>
     <string name="chat_send_shell">Kabuk komutu gönder</string>
     <string name="chat_shell_mode_hold_send_hint">Kabuk modu aktif. Geri dönmek için Gönder\'e basılı tutun.</string>
+    <string name="menu_review_changes">Değişiklikleri gözden geçir</string>
 </resources>

@@ -191,9 +191,6 @@ class ChatViewModel @Inject constructor(
     val keepScreenOn = settingsRepository.keepScreenOn.stateIn(
         viewModelScope, SharingStarted.WhileSubscribed(5000), false
     )
-    val showShellButton = settingsRepository.showShellButton.stateIn(
-        viewModelScope, SharingStarted.WhileSubscribed(5000), true
-    )
     val compressImageAttachments = settingsRepository.compressImageAttachments.stateIn(
         viewModelScope, SharingStarted.WhileSubscribed(5000), true
     )

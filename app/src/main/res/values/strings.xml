@@ -341,8 +341,6 @@
     <string name="settings_reconnect_conservative">Conservative (1–60s)</string>
     <string name="settings_keep_screen_on">Keep screen on</string>
     <string name="settings_keep_screen_on_desc">Prevent screen timeout while in chat</string>
-    <string name="settings_show_shell_button">Show shell button</string>
-    <string name="settings_show_shell_button_desc">Show shell mode toggle near attachment button in chat</string>
     <string name="settings_compress_images">Optimize image attachments</string>
     <string name="settings_compress_images_desc">Resize large screenshots and convert PNG/JPEG to WebP before sending to reduce token usage</string>
     <string name="settings_compress_images_max_side">Max image side</string>
@@ -467,6 +465,7 @@
     <string name="menu_new_session">New session</string>
     <string name="menu_fork_session">Fork session</string>
     <string name="menu_compact_session">Compact session</string>
+    <string name="menu_review_changes">Review changes</string>
     <string name="menu_share_session">Share session</string>
     <string name="menu_rename_session">Rename session</string>
     <string name="menu_export_session">Export session</string>

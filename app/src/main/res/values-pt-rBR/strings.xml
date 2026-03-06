@@ -343,8 +343,8 @@
     <string name="chat_terminal_clear">Limpar</string>
     <string name="chat_terminal_connect_failed">Falha ao abrir o terminal</string>
     <string name="chat_terminal_tap_keyboard">Toque para abrir o teclado</string>
-    <string name="settings_show_shell_button">Mostrar botão shell</string>
-    <string name="settings_show_shell_button_desc">Mostrar alternância de modo shell próximo ao botão de anexo no chat</string>
+    <string name="settings_show_shell_button">Mostrar botão do shell</string>
+    <string name="settings_show_shell_button_desc">Exibir o botão do shell nas configurações</string>
     <string name="server_settings_providers">Provedores</string>
     <string name="server_settings_providers_desc">Ative ou desative provedores para este servidor</string>
     <string name="server_settings_providers_connected">Conectado</string>
@@ -458,4 +458,5 @@ Tokens: ~%4$d -&gt; ~%5$d</string>
     <string name="home_local_launch_options_title">Opções de inicialização</string>
     <string name="chat_send_shell">Enviar comando shell</string>
     <string name="chat_shell_mode_hold_send_hint">Modo shell ativo. Mantenha Enviar pressionado para voltar.</string>
+    <string name="menu_review_changes">Revisar alterações</string>
 </resources>

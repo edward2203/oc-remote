@@ -318,8 +318,8 @@
     <string name="settings_reconnect_conservative">Консервативный (1–60с)</string>
     <string name="settings_keep_screen_on">Не выключать экран</string>
     <string name="settings_keep_screen_on_desc">Предотвратить отключение экрана во время чата</string>
-    <string name="settings_show_shell_button">Показать кнопку shell</string>
-    <string name="settings_show_shell_button_desc">Показывать переключатель режима shell рядом с кнопкой вложения в чате</string>
+    <string name="settings_show_shell_button">Показать кнопку Shell</string>
+    <string name="settings_show_shell_button_desc">Отображать кнопку Shell в настройках</string>
     <string name="settings_silent_notifications">Бесшумные уведомления</string>
     <string name="settings_silent_notifications_desc">Отключить звук и вибрацию для уведомлений о задачах</string>
     <string name="dialog_select_reconnect_mode">Выберите режим переподключения</string>
@@ -459,4 +459,5 @@
     <string name="home_local_launch_options_title">Параметры запуска</string>
     <string name="chat_send_shell">Отправить команду shell</string>
     <string name="chat_shell_mode_hold_send_hint">Режим shell активен. Удерживайте «Отправить», чтобы вернуться назад.</string>
+    <string name="menu_review_changes">Просмотреть изменения</string>
 </resources>

@@ -39,7 +39,6 @@ class SettingsRepository @Inject constructor(
         private val RECONNECT_MODE_KEY = stringPreferencesKey("reconnect_mode")
         private val KEEP_SCREEN_ON_KEY = booleanPreferencesKey("keep_screen_on")
         private val SILENT_NOTIFICATIONS_KEY = booleanPreferencesKey("silent_notifications")
-        private val SHOW_SHELL_BUTTON_KEY = booleanPreferencesKey("show_shell_button")
         private val COMPRESS_IMAGE_ATTACHMENTS_KEY = booleanPreferencesKey("compress_image_attachments")
         private val IMAGE_ATTACHMENT_MAX_LONG_SIDE_KEY = intPreferencesKey("image_attachment_max_long_side")
         private val IMAGE_ATTACHMENT_WEBP_QUALITY_KEY = intPreferencesKey("image_attachment_webp_quality")
@@ -274,19 +273,6 @@ class SettingsRepository @Inject constructor(
     suspend fun setSilentNotifications(enabled: Boolean) {
         dataStore.edit { preferences ->
             preferences[SILENT_NOTIFICATIONS_KEY] = enabled
-        }
-    }
-
-    /**
-     * Whether to show shell mode toggle button in chat input. Default: true.
-     */
-    val showShellButton: Flow<Boolean> = dataStore.data.map { preferences ->
-        preferences[SHOW_SHELL_BUTTON_KEY] ?: true
-    }
-
-    suspend fun setShowShellButton(enabled: Boolean) {
-        dataStore.edit { preferences ->
-            preferences[SHOW_SHELL_BUTTON_KEY] = enabled
         }
     }
 

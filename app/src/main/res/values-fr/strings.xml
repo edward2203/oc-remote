@@ -343,8 +343,8 @@
     <string name="chat_terminal_clear">Effacer</string>
     <string name="chat_terminal_connect_failed">Impossible d’ouvrir le terminal</string>
     <string name="chat_terminal_tap_keyboard">Appuyez pour ouvrir le clavier</string>
-    <string name="settings_show_shell_button">Afficher le bouton shell</string>
-    <string name="settings_show_shell_button_desc">Afficher le bouton de mode shell près du bouton de pièce jointe dans le chat</string>
+    <string name="settings_show_shell_button">Afficher le bouton Shell</string>
+    <string name="settings_show_shell_button_desc">Afficher ou masquer le bouton Shell dans les paramètres</string>
     <string name="server_settings_providers">Fournisseurs</string>
     <string name="server_settings_providers_desc">Activer ou désactiver les fournisseurs pour ce serveur</string>
     <string name="server_settings_providers_connected">Connecté</string>
@@ -456,4 +456,5 @@
     <string name="home_local_launch_options_title">Options de lancement</string>
     <string name="chat_send_shell">Envoyer une commande shell</string>
     <string name="chat_shell_mode_hold_send_hint">Mode shell actif. Maintenez Envoyer pour revenir.</string>
+    <string name="menu_review_changes">Examiner les modifications</string>
 </resources>

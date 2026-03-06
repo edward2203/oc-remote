@@ -344,7 +344,7 @@
     <string name="chat_terminal_connect_failed">No se pudo abrir el terminal</string>
     <string name="chat_terminal_tap_keyboard">Toca para abrir el teclado</string>
     <string name="settings_show_shell_button">Mostrar botón de shell</string>
-    <string name="settings_show_shell_button_desc">Mostrar el interruptor de modo shell junto al botón de adjuntar en el chat</string>
+    <string name="settings_show_shell_button_desc">Mostrar u ocultar el botón de shell en la interfaz</string>
     <string name="server_settings_providers">Proveedores</string>
     <string name="server_settings_providers_desc">Activar o desactivar proveedores para este servidor</string>
     <string name="server_settings_providers_connected">Conectado</string>
@@ -458,4 +458,5 @@ Tokens: ~%4$d -&gt; ~%5$d</string>
     <string name="home_local_launch_options_title">Opciones de inicio</string>
     <string name="chat_send_shell">Enviar comando shell</string>
     <string name="chat_shell_mode_hold_send_hint">Modo shell activo. Mantén presionado Enviar para volver.</string>
+    <string name="menu_review_changes">Revisar cambios</string>
 </resources>

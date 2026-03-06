@@ -99,12 +99,6 @@ class SettingsViewModel @Inject constructor(
         initialValue = false
     )
 
-    val showShellButton = settingsRepository.showShellButton.stateIn(
-        scope = viewModelScope,
-        started = SharingStarted.WhileSubscribed(5000),
-        initialValue = true
-    )
-
     val compressImageAttachments = settingsRepository.compressImageAttachments.stateIn(
         scope = viewModelScope,
         started = SharingStarted.WhileSubscribed(5000),
@@ -270,12 +264,6 @@ class SettingsViewModel @Inject constructor(
     fun setSilentNotifications(enabled: Boolean) {
         viewModelScope.launch {
             settingsRepository.setSilentNotifications(enabled)
-        }
-    }
-
-    fun setShowShellButton(enabled: Boolean) {
-        viewModelScope.launch {
-            settingsRepository.setShowShellButton(enabled)
         }
     }
 

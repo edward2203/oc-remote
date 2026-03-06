@@ -237,6 +237,7 @@ checksums:
         menu_new_session: 40be212eac36369a347ca67a3c163163
         menu_open_in_web: 44666553ec2917e7cb0cb5dd7478efe5
         menu_rename_session: ff24972dba0198979902afad488d6c03
+        menu_review_changes: ab4db0808e9cd1ab60f7df4ad069a7f5
         menu_share_session: 8de5c69651d3dd2332d00293f1adb526
         more_options: 2a86b6bc0c6a13a85b7cf30ec553ae46
         notification_channel_connection: a2e6fad5f02ec5fd5c5aeaf6b8f212da
@@ -421,8 +422,8 @@ checksums:
         settings_section_general: 70f9a0cf5679090446786ed38672e63d
         settings_section_notifications: 91cb0ca76a93a14ba4527b9fbcdd6d67
         settings_send: f7317848e19ed95e40e0d115f309e9f3
-        settings_show_shell_button: f2cec98c99824988e971d8dabfd54ce8
-        settings_show_shell_button_desc: 5e13d55a688bac094e817c80620bd587
+        settings_show_shell_button: 5c290a959c437a0f3097755ffd799985
+        settings_show_shell_button_desc: 73a6f914d75019c4ea78237f64f4926d
         settings_silent_notifications: 8c8e2623f5b930b65c8d6f0f8d60cd68
         settings_silent_notifications_desc: fd037a3c4249ec016d10e4314ccb2f30
         settings_terminal_font_size: f586e4b24b214e66c8d2b08db9f3a146
@@ -684,6 +685,7 @@ checksums:
         menu_new_session: 40be212eac36369a347ca67a3c163163
         menu_open_in_web: 44666553ec2917e7cb0cb5dd7478efe5
         menu_rename_session: ff24972dba0198979902afad488d6c03
+        menu_review_changes: ab4db0808e9cd1ab60f7df4ad069a7f5
         menu_share_session: 8de5c69651d3dd2332d00293f1adb526
         more_options: 2a86b6bc0c6a13a85b7cf30ec553ae46
         notification_channel_connection: a2e6fad5f02ec5fd5c5aeaf6b8f212da
@@ -868,8 +870,8 @@ checksums:
         settings_section_general: 70f9a0cf5679090446786ed38672e63d
         settings_section_notifications: 91cb0ca76a93a14ba4527b9fbcdd6d67
         settings_send: f7317848e19ed95e40e0d115f309e9f3
-        settings_show_shell_button: f2cec98c99824988e971d8dabfd54ce8
-        settings_show_shell_button_desc: 5e13d55a688bac094e817c80620bd587
+        settings_show_shell_button: 5c290a959c437a0f3097755ffd799985
+        settings_show_shell_button_desc: 73a6f914d75019c4ea78237f64f4926d
         settings_silent_notifications: 8c8e2623f5b930b65c8d6f0f8d60cd68
         settings_silent_notifications_desc: fd037a3c4249ec016d10e4314ccb2f30
         settings_terminal_font_size: f586e4b24b214e66c8d2b08db9f3a146
@@ -1131,6 +1133,7 @@ checksums:
         menu_new_session: 40be212eac36369a347ca67a3c163163
         menu_open_in_web: 44666553ec2917e7cb0cb5dd7478efe5
         menu_rename_session: ff24972dba0198979902afad488d6c03
+        menu_review_changes: ab4db0808e9cd1ab60f7df4ad069a7f5
         menu_share_session: 8de5c69651d3dd2332d00293f1adb526
         more_options: 2a86b6bc0c6a13a85b7cf30ec553ae46
         notification_channel_connection: a2e6fad5f02ec5fd5c5aeaf6b8f212da
@@ -1315,8 +1318,8 @@ checksums:
         settings_section_general: 70f9a0cf5679090446786ed38672e63d
         settings_section_notifications: 91cb0ca76a93a14ba4527b9fbcdd6d67
         settings_send: f7317848e19ed95e40e0d115f309e9f3
-        settings_show_shell_button: f2cec98c99824988e971d8dabfd54ce8
-        settings_show_shell_button_desc: 5e13d55a688bac094e817c80620bd587
+        settings_show_shell_button: 5c290a959c437a0f3097755ffd799985
+        settings_show_shell_button_desc: 73a6f914d75019c4ea78237f64f4926d
         settings_silent_notifications: 8c8e2623f5b930b65c8d6f0f8d60cd68
         settings_silent_notifications_desc: fd037a3c4249ec016d10e4314ccb2f30
         settings_terminal_font_size: f586e4b24b214e66c8d2b08db9f3a146
@@ -1578,6 +1581,7 @@ checksums:
         menu_new_session: 40be212eac36369a347ca67a3c163163
         menu_open_in_web: 44666553ec2917e7cb0cb5dd7478efe5
         menu_rename_session: ff24972dba0198979902afad488d6c03
+        menu_review_changes: ab4db0808e9cd1ab60f7df4ad069a7f5
         menu_share_session: 8de5c69651d3dd2332d00293f1adb526
         more_options: 2a86b6bc0c6a13a85b7cf30ec553ae46
         notification_channel_connection: a2e6fad5f02ec5fd5c5aeaf6b8f212da
@@ -1762,8 +1766,8 @@ checksums:
         settings_section_general: 70f9a0cf5679090446786ed38672e63d
         settings_section_notifications: 91cb0ca76a93a14ba4527b9fbcdd6d67
         settings_send: f7317848e19ed95e40e0d115f309e9f3
-        settings_show_shell_button: f2cec98c99824988e971d8dabfd54ce8
-        settings_show_shell_button_desc: 5e13d55a688bac094e817c80620bd587
+        settings_show_shell_button: 5c290a959c437a0f3097755ffd799985
+        settings_show_shell_button_desc: 73a6f914d75019c4ea78237f64f4926d
         settings_silent_notifications: 8c8e2623f5b930b65c8d6f0f8d60cd68
         settings_silent_notifications_desc: fd037a3c4249ec016d10e4314ccb2f30
         settings_terminal_font_size: f586e4b24b214e66c8d2b08db9f3a146
@@ -2025,6 +2029,7 @@ checksums:
         menu_new_session: 40be212eac36369a347ca67a3c163163
         menu_open_in_web: 44666553ec2917e7cb0cb5dd7478efe5
         menu_rename_session: ff24972dba0198979902afad488d6c03
+        menu_review_changes: ab4db0808e9cd1ab60f7df4ad069a7f5
         menu_share_session: 8de5c69651d3dd2332d00293f1adb526
         more_options: 2a86b6bc0c6a13a85b7cf30ec553ae46
         notification_channel_connection: a2e6fad5f02ec5fd5c5aeaf6b8f212da
@@ -2209,8 +2214,8 @@ checksums:
         settings_section_general: 70f9a0cf5679090446786ed38672e63d
         settings_section_notifications: 91cb0ca76a93a14ba4527b9fbcdd6d67
         settings_send: f7317848e19ed95e40e0d115f309e9f3
-        settings_show_shell_button: f2cec98c99824988e971d8dabfd54ce8
-        settings_show_shell_button_desc: 5e13d55a688bac094e817c80620bd587
+        settings_show_shell_button: 5c290a959c437a0f3097755ffd799985
+        settings_show_shell_button_desc: 73a6f914d75019c4ea78237f64f4926d
         settings_silent_notifications: 8c8e2623f5b930b65c8d6f0f8d60cd68
         settings_silent_notifications_desc: fd037a3c4249ec016d10e4314ccb2f30
         settings_terminal_font_size: f586e4b24b214e66c8d2b08db9f3a146
@@ -2472,6 +2477,7 @@ checksums:
         menu_new_session: 40be212eac36369a347ca67a3c163163
         menu_open_in_web: 44666553ec2917e7cb0cb5dd7478efe5
         menu_rename_session: ff24972dba0198979902afad488d6c03
+        menu_review_changes: ab4db0808e9cd1ab60f7df4ad069a7f5
         menu_share_session: 8de5c69651d3dd2332d00293f1adb526
         more_options: 2a86b6bc0c6a13a85b7cf30ec553ae46
         notification_channel_connection: a2e6fad5f02ec5fd5c5aeaf6b8f212da
@@ -2656,8 +2662,8 @@ checksums:
         settings_section_general: 70f9a0cf5679090446786ed38672e63d
         settings_section_notifications: 91cb0ca76a93a14ba4527b9fbcdd6d67
         settings_send: f7317848e19ed95e40e0d115f309e9f3
-        settings_show_shell_button: f2cec98c99824988e971d8dabfd54ce8
-        settings_show_shell_button_desc: 5e13d55a688bac094e817c80620bd587
+        settings_show_shell_button: 5c290a959c437a0f3097755ffd799985
+        settings_show_shell_button_desc: 73a6f914d75019c4ea78237f64f4926d
         settings_silent_notifications: 8c8e2623f5b930b65c8d6f0f8d60cd68
         settings_silent_notifications_desc: fd037a3c4249ec016d10e4314ccb2f30
         settings_terminal_font_size: f586e4b24b214e66c8d2b08db9f3a146
@@ -2919,6 +2925,7 @@ checksums:
         menu_new_session: 40be212eac36369a347ca67a3c163163
         menu_open_in_web: 44666553ec2917e7cb0cb5dd7478efe5
         menu_rename_session: ff24972dba0198979902afad488d6c03
+        menu_review_changes: ab4db0808e9cd1ab60f7df4ad069a7f5
         menu_share_session: 8de5c69651d3dd2332d00293f1adb526
         more_options: 2a86b6bc0c6a13a85b7cf30ec553ae46
         notification_channel_connection: a2e6fad5f02ec5fd5c5aeaf6b8f212da
@@ -3103,8 +3110,8 @@ checksums:
         settings_section_general: 70f9a0cf5679090446786ed38672e63d
         settings_section_notifications: 91cb0ca76a93a14ba4527b9fbcdd6d67
         settings_send: f7317848e19ed95e40e0d115f309e9f3
-        settings_show_shell_button: f2cec98c99824988e971d8dabfd54ce8
-        settings_show_shell_button_desc: 5e13d55a688bac094e817c80620bd587
+        settings_show_shell_button: 5c290a959c437a0f3097755ffd799985
+        settings_show_shell_button_desc: 73a6f914d75019c4ea78237f64f4926d
         settings_silent_notifications: 8c8e2623f5b930b65c8d6f0f8d60cd68
         settings_silent_notifications_desc: fd037a3c4249ec016d10e4314ccb2f30
         settings_terminal_font_size: f586e4b24b214e66c8d2b08db9f3a146
@@ -3366,6 +3373,7 @@ checksums:
         menu_new_session: 40be212eac36369a347ca67a3c163163
         menu_open_in_web: 44666553ec2917e7cb0cb5dd7478efe5
         menu_rename_session: ff24972dba0198979902afad488d6c03
+        menu_review_changes: ab4db0808e9cd1ab60f7df4ad069a7f5
         menu_share_session: 8de5c69651d3dd2332d00293f1adb526
         more_options: 2a86b6bc0c6a13a85b7cf30ec553ae46
         notification_channel_connection: a2e6fad5f02ec5fd5c5aeaf6b8f212da
@@ -3550,8 +3558,8 @@ checksums:
         settings_section_general: 70f9a0cf5679090446786ed38672e63d
         settings_section_notifications: 91cb0ca76a93a14ba4527b9fbcdd6d67
         settings_send: f7317848e19ed95e40e0d115f309e9f3
-        settings_show_shell_button: f2cec98c99824988e971d8dabfd54ce8
-        settings_show_shell_button_desc: 5e13d55a688bac094e817c80620bd587
+        settings_show_shell_button: 5c290a959c437a0f3097755ffd799985
+        settings_show_shell_button_desc: 73a6f914d75019c4ea78237f64f4926d
         settings_silent_notifications: 8c8e2623f5b930b65c8d6f0f8d60cd68
         settings_silent_notifications_desc: fd037a3c4249ec016d10e4314ccb2f30
         settings_terminal_font_size: f586e4b24b214e66c8d2b08db9f3a146
@@ -3813,6 +3821,7 @@ checksums:
         menu_new_session: 40be212eac36369a347ca67a3c163163
         menu_open_in_web: 44666553ec2917e7cb0cb5dd7478efe5
         menu_rename_session: ff24972dba0198979902afad488d6c03
+        menu_review_changes: ab4db0808e9cd1ab60f7df4ad069a7f5
         menu_share_session: 8de5c69651d3dd2332d00293f1adb526
         more_options: 2a86b6bc0c6a13a85b7cf30ec553ae46
         notification_channel_connection: a2e6fad5f02ec5fd5c5aeaf6b8f212da
@@ -3997,8 +4006,8 @@ checksums:
         settings_section_general: 70f9a0cf5679090446786ed38672e63d
         settings_section_notifications: 91cb0ca76a93a14ba4527b9fbcdd6d67
         settings_send: f7317848e19ed95e40e0d115f309e9f3
-        settings_show_shell_button: f2cec98c99824988e971d8dabfd54ce8
-        settings_show_shell_button_desc: 5e13d55a688bac094e817c80620bd587
+        settings_show_shell_button: 5c290a959c437a0f3097755ffd799985
+        settings_show_shell_button_desc: 73a6f914d75019c4ea78237f64f4926d
         settings_silent_notifications: 8c8e2623f5b930b65c8d6f0f8d60cd68
         settings_silent_notifications_desc: fd037a3c4249ec016d10e4314ccb2f30
         settings_terminal_font_size: f586e4b24b214e66c8d2b08db9f3a146
@@ -4260,6 +4269,7 @@ checksums:
         menu_new_session: 40be212eac36369a347ca67a3c163163
         menu_open_in_web: 44666553ec2917e7cb0cb5dd7478efe5
         menu_rename_session: ff24972dba0198979902afad488d6c03
+        menu_review_changes: ab4db0808e9cd1ab60f7df4ad069a7f5
         menu_share_session: 8de5c69651d3dd2332d00293f1adb526
         more_options: 2a86b6bc0c6a13a85b7cf30ec553ae46
         notification_channel_connection: a2e6fad5f02ec5fd5c5aeaf6b8f212da
@@ -4444,8 +4454,8 @@ checksums:
         settings_section_general: 70f9a0cf5679090446786ed38672e63d
         settings_section_notifications: 91cb0ca76a93a14ba4527b9fbcdd6d67
         settings_send: f7317848e19ed95e40e0d115f309e9f3
-        settings_show_shell_button: f2cec98c99824988e971d8dabfd54ce8
-        settings_show_shell_button_desc: 5e13d55a688bac094e817c80620bd587
+        settings_show_shell_button: 5c290a959c437a0f3097755ffd799985
+        settings_show_shell_button_desc: 73a6f914d75019c4ea78237f64f4926d
         settings_silent_notifications: 8c8e2623f5b930b65c8d6f0f8d60cd68
         settings_silent_notifications_desc: fd037a3c4249ec016d10e4314ccb2f30
         settings_terminal_font_size: f586e4b24b214e66c8d2b08db9f3a146
@@ -4707,6 +4717,7 @@ checksums:
         menu_new_session: 40be212eac36369a347ca67a3c163163
         menu_open_in_web: 44666553ec2917e7cb0cb5dd7478efe5
         menu_rename_session: ff24972dba0198979902afad488d6c03
+        menu_review_changes: ab4db0808e9cd1ab60f7df4ad069a7f5
         menu_share_session: 8de5c69651d3dd2332d00293f1adb526
         more_options: 2a86b6bc0c6a13a85b7cf30ec553ae46
         notification_channel_connection: a2e6fad5f02ec5fd5c5aeaf6b8f212da
@@ -4891,8 +4902,8 @@ checksums:
         settings_section_general: 70f9a0cf5679090446786ed38672e63d
         settings_section_notifications: 91cb0ca76a93a14ba4527b9fbcdd6d67
         settings_send: f7317848e19ed95e40e0d115f309e9f3
-        settings_show_shell_button: f2cec98c99824988e971d8dabfd54ce8
-        settings_show_shell_button_desc: 5e13d55a688bac094e817c80620bd587
+        settings_show_shell_button: 5c290a959c437a0f3097755ffd799985
+        settings_show_shell_button_desc: 73a6f914d75019c4ea78237f64f4926d
         settings_silent_notifications: 8c8e2623f5b930b65c8d6f0f8d60cd68
         settings_silent_notifications_desc: fd037a3c4249ec016d10e4314ccb2f30
         settings_terminal_font_size: f586e4b24b214e66c8d2b08db9f3a146
@@ -5154,6 +5165,7 @@ checksums:
         menu_new_session: 40be212eac36369a347ca67a3c163163
         menu_open_in_web: 44666553ec2917e7cb0cb5dd7478efe5
         menu_rename_session: ff24972dba0198979902afad488d6c03
+        menu_review_changes: ab4db0808e9cd1ab60f7df4ad069a7f5
         menu_share_session: 8de5c69651d3dd2332d00293f1adb526
         more_options: 2a86b6bc0c6a13a85b7cf30ec553ae46
         notification_channel_connection: a2e6fad5f02ec5fd5c5aeaf6b8f212da
@@ -5338,8 +5350,8 @@ checksums:
         settings_section_general: 70f9a0cf5679090446786ed38672e63d
         settings_section_notifications: 91cb0ca76a93a14ba4527b9fbcdd6d67
         settings_send: f7317848e19ed95e40e0d115f309e9f3
-        settings_show_shell_button: f2cec98c99824988e971d8dabfd54ce8
-        settings_show_shell_button_desc: 5e13d55a688bac094e817c80620bd587
+        settings_show_shell_button: 5c290a959c437a0f3097755ffd799985
+        settings_show_shell_button_desc: 73a6f914d75019c4ea78237f64f4926d
         settings_silent_notifications: 8c8e2623f5b930b65c8d6f0f8d60cd68
         settings_silent_notifications_desc: fd037a3c4249ec016d10e4314ccb2f30
         settings_terminal_font_size: f586e4b24b214e66c8d2b08db9f3a146
@@ -5601,6 +5613,7 @@ checksums:
         menu_new_session: 40be212eac36369a347ca67a3c163163
         menu_open_in_web: 44666553ec2917e7cb0cb5dd7478efe5
         menu_rename_session: ff24972dba0198979902afad488d6c03
+        menu_review_changes: ab4db0808e9cd1ab60f7df4ad069a7f5
         menu_share_session: 8de5c69651d3dd2332d00293f1adb526
         more_options: 2a86b6bc0c6a13a85b7cf30ec553ae46
         notification_channel_connection: a2e6fad5f02ec5fd5c5aeaf6b8f212da
@@ -5785,8 +5798,8 @@ checksums:
         settings_section_general: 70f9a0cf5679090446786ed38672e63d
         settings_section_notifications: 91cb0ca76a93a14ba4527b9fbcdd6d67
         settings_send: f7317848e19ed95e40e0d115f309e9f3
-        settings_show_shell_button: f2cec98c99824988e971d8dabfd54ce8
-        settings_show_shell_button_desc: 5e13d55a688bac094e817c80620bd587
+        settings_show_shell_button: 5c290a959c437a0f3097755ffd799985
+        settings_show_shell_button_desc: 73a6f914d75019c4ea78237f64f4926d
         settings_silent_notifications: 8c8e2623f5b930b65c8d6f0f8d60cd68
         settings_silent_notifications_desc: fd037a3c4249ec016d10e4314ccb2f30
         settings_terminal_font_size: f586e4b24b214e66c8d2b08db9f3a146
@@ -6048,6 +6061,7 @@ checksums:
         menu_new_session: 40be212eac36369a347ca67a3c163163
         menu_open_in_web: 44666553ec2917e7cb0cb5dd7478efe5
         menu_rename_session: ff24972dba0198979902afad488d6c03
+        menu_review_changes: ab4db0808e9cd1ab60f7df4ad069a7f5
         menu_share_session: 8de5c69651d3dd2332d00293f1adb526
         more_options: 2a86b6bc0c6a13a85b7cf30ec553ae46
         notification_channel_connection: a2e6fad5f02ec5fd5c5aeaf6b8f212da
@@ -6232,8 +6246,8 @@ checksums:
         settings_section_general: 70f9a0cf5679090446786ed38672e63d
         settings_section_notifications: 91cb0ca76a93a14ba4527b9fbcdd6d67
         settings_send: f7317848e19ed95e40e0d115f309e9f3
-        settings_show_shell_button: f2cec98c99824988e971d8dabfd54ce8
-        settings_show_shell_button_desc: 5e13d55a688bac094e817c80620bd587
+        settings_show_shell_button: 5c290a959c437a0f3097755ffd799985
+        settings_show_shell_button_desc: 73a6f914d75019c4ea78237f64f4926d
         settings_silent_notifications: 8c8e2623f5b930b65c8d6f0f8d60cd68
         settings_silent_notifications_desc: fd037a3c4249ec016d10e4314ccb2f30
         settings_terminal_font_size: f586e4b24b214e66c8d2b08db9f3a146

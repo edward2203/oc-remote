@@ -29,7 +29,7 @@ Android client for [OpenCode](https://github.com/anomalyco/opencode) servers wit
 - **Image preview & save** — open sent and draft images in fullscreen preview and save to device storage
 - **Shell output copy** — bash output blocks support text selection and one-tap copy (command + output)
 - **HTML error fallback modes** — switch long HTML error payloads between rendered page view and raw code view
-- **Slash commands** — `/new`, `/fork`, `/compact`, `/share`, `/rename`, `/undo`, `/redo`, `/shell` (if enabled in settings)
+- **Slash commands** — `/new`, `/fork`, `/compact`, `/share`, `/rename`, `/undo`, `/redo`, `/shell`
 - **Swipe to revert** — swipe user messages to undo (with confirmation dialog)
 
 ### Terminal Mode
@@ -43,7 +43,7 @@ Android client for [OpenCode](https://github.com/anomalyco/opencode) servers wit
 
 ### Session Management  
 - **Multi-session** — switch between sessions, view history
-- **Session actions** — create, fork, compact, share/unshare, rename via dropdown menu
+- **Session actions** — create, fork, compact, review changes, share/unshare, rename via dropdown menu
 - **Terminal mode shortcut** — open the current session in terminal mode from the chat top bar
 - **Load older messages** — paginated history loading; initial batch size is configurable (25-200)
 - **Large-session stability** — `largeHeap`, paginated message loading, and OOM fallback retry with smaller limits
@@ -81,7 +81,6 @@ Android client for [OpenCode](https://github.com/anomalyco/opencode) servers wit
 - **Keep screen on** — prevents sleep while the chat screen is open
 - **Notifications** — toggle task completion notifications
 - **Silent notifications** — suppress sound and vibration for task notifications
-- **Shell mode toggle** — show or hide shell-mode controls in chat input
 - **Image optimization controls** — tune max image side (keep original or 720–2560 px) and WebP quality for attachments
 
 ### Connection

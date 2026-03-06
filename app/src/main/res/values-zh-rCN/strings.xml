@@ -344,7 +344,7 @@
     <string name="chat_terminal_connect_failed">终端打开失败</string>
     <string name="chat_terminal_tap_keyboard">点击打开键盘</string>
     <string name="settings_show_shell_button">显示 Shell 按钮</string>
-    <string name="settings_show_shell_button_desc">在聊天附件按钮旁显示 Shell 模式切换</string>
+    <string name="settings_show_shell_button_desc">在设置中显示 Shell 按钮</string>
     <string name="server_settings_providers">提供方</string>
     <string name="server_settings_providers_desc">为此服务器启用或禁用提供方</string>
     <string name="server_settings_providers_connected">已连接</string>
@@ -458,4 +458,5 @@
     <string name="home_local_launch_options_title">启动选项</string>
     <string name="chat_send_shell">发送 Shell 命令</string>
     <string name="chat_shell_mode_hold_send_hint">Shell 模式已激活。长按发送可切换回原模式。</string>
+    <string name="menu_review_changes">查看更改</string>
 </resources>

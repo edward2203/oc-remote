@@ -265,8 +265,8 @@ private enum class ChatInputMode {
 
 /** Client-side slash commands that mirror the original opencode TUI. */
 @Composable
-private fun clientCommands(showShellCommand: Boolean): List<SlashCommand> {
-    val commands = mutableListOf(
+private fun clientCommands(): List<SlashCommand> {
+    return listOf(
         SlashCommand("new", stringResource(R.string.cmd_new), "client"),
         SlashCommand("compact", stringResource(R.string.cmd_compact), "client"),
         SlashCommand("fork", stringResource(R.string.cmd_fork), "client"),
@@ -275,11 +275,8 @@ private fun clientCommands(showShellCommand: Boolean): List<SlashCommand> {
         SlashCommand("undo", stringResource(R.string.cmd_undo), "client"),
         SlashCommand("redo", stringResource(R.string.cmd_redo), "client"),
         SlashCommand("rename", stringResource(R.string.cmd_rename), "client"),
+        SlashCommand("shell", stringResource(R.string.cmd_shell_mode), "client"),
     )
-    if (showShellCommand) {
-        commands += SlashCommand("shell", stringResource(R.string.cmd_shell_mode), "client")
-    }
-    return commands
 }
 
 /** Pulsing dots loading indicator — 3 dots that scale up/down in sequence. */
@@ -902,7 +899,6 @@ fun ChatScreen(
     val collapseTools by viewModel.collapseTools.collectAsState()
     val hapticEnabled by viewModel.hapticFeedback.collectAsState()
     val keepScreenOn by viewModel.keepScreenOn.collectAsState()
-    val showShellButton by viewModel.showShellButton.collectAsState()
     val compressImageAttachments by viewModel.compressImageAttachments.collectAsState()
     val imageAttachmentMaxLongSide by viewModel.imageAttachmentMaxLongSide.collectAsState()
     val imageAttachmentWebpQuality by viewModel.imageAttachmentWebpQuality.collectAsState()
@@ -922,12 +918,6 @@ fun ChatScreen(
     var pendingSendAction by remember { mutableStateOf<(() -> Unit)?>(null) }
     var inputMode by rememberSaveable { mutableStateOf(ChatInputMode.NORMAL.name) }
     val isShellMode = inputMode == ChatInputMode.SHELL.name
-
-    LaunchedEffect(showShellButton) {
-        if (!showShellButton && isShellMode) {
-            inputMode = ChatInputMode.NORMAL.name
-        }
-    }
 
     BackHandler(enabled = isTerminalMode) {
         if (terminalDrawerState.isOpen) {
@@ -1566,6 +1556,19 @@ fun ChatScreen(
                                     Icon(Icons.Default.Compress, contentDescription = null)
                                 }
                             )
+                            DropdownMenuItem(
+                                text = { Text(stringResource(R.string.menu_review_changes)) },
+                                onClick = {
+                                    showMenu = false
+                                    viewModel.executeCommand("review") { ok ->
+                                        coroutineScope.launch {
+                                            snackbarHostState.showSnackbar(
+                                                if (ok) context.getString(R.string.chat_command_executed, "review") else context.getString(R.string.chat_command_failed, "review")
+                                            )
+                                        }
+                                    }
+                                }
+                            )
                             // Show Share or Unshare depending on current share status
                             if (uiState.shareUrl != null) {
                                 DropdownMenuItem(
@@ -1758,7 +1761,6 @@ fun ChatScreen(
                         viewModel.clearFileSearch()
                     }
                 },
-                showShellButton = showShellButton,
                 isSending = uiState.isSending,
                 isBusy = uiState.sessionStatus is SessionStatus.Busy,
                 messages = uiState.messages,
@@ -1881,9 +1883,7 @@ fun ChatScreen(
                             showRenameDialog = true
                         }
                         "shell" -> {
-                            if (showShellButton) {
-                                inputMode = ChatInputMode.SHELL.name
-                            }
+                            inputMode = ChatInputMode.SHELL.name
                         }
                         else -> {
                             // Server command — execute via API
@@ -5885,7 +5885,6 @@ private fun ChatInputBar(
     onSlashCommand: (SlashCommand) -> Unit = {},
     inputMode: ChatInputMode = ChatInputMode.NORMAL,
     onInputModeChange: (ChatInputMode) -> Unit = {},
-    showShellButton: Boolean = true,
     contextWindow: Int = 0,
     lastContextTokens: Int = 0
 ) {
@@ -5906,11 +5905,11 @@ private fun ChatInputBar(
     }
 
     val text = textFieldValue.text
-    val canSend = (text.isNotBlank() || attachments.isNotEmpty()) && !isSending
+    val canSend = (text.isNotBlank() || attachments.isNotEmpty()) && !isSending && (!isShellMode || !isBusy)
     var previewAttachmentIndex by remember { mutableStateOf(-1) }
 
     // Build merged slash commands: client commands + server commands (deduplicated)
-    val clientCmds = clientCommands(showShellButton)
+    val clientCmds = clientCommands()
     val allCommands = remember(commands, clientCmds) {
         val clientNames = clientCmds.map { it.name }.toSet()
         val serverSlash = commands
@@ -6245,37 +6244,6 @@ private fun ChatInputBar(
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(0.dp)
                     ) {
-                        if (showShellButton) {
-                            // Shell toggle button — fixed and pinned left of attachment
-                            Surface(
-                                modifier = Modifier
-                                    .size(32.dp)
-                                    .clip(RoundedCornerShape(10.dp))
-                                    .clickable {
-                                        onInputModeChange(if (isShellMode) ChatInputMode.NORMAL else ChatInputMode.SHELL)
-                                    },
-                                shape = RoundedCornerShape(10.dp),
-                                color = if (isShellMode) {
-                                    MaterialTheme.colorScheme.primary.copy(alpha = 0.2f)
-                                } else {
-                                    Color.Transparent
-                                }
-                            ) {
-                                Box(contentAlignment = Alignment.Center) {
-                                    Icon(
-                                        imageVector = Icons.Default.Terminal,
-                                        contentDescription = "shell",
-                                        modifier = Modifier.size(18.dp),
-                                        tint = if (isShellMode) {
-                                            MaterialTheme.colorScheme.primary
-                                        } else {
-                                            MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.72f)
-                                        }
-                                    )
-                                }
-                            }
-                        }
-
                         // Attach button (paperclip) — always visible, pinned right, aligned with Send button
                         IconButton(
                             onClick = onAttach,

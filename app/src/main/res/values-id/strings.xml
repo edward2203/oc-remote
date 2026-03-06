@@ -349,8 +349,8 @@
     <string name="chat_terminal_clear">Bersihkan</string>
     <string name="chat_terminal_connect_failed">Gagal membuka terminal</string>
     <string name="chat_terminal_tap_keyboard">Ketuk untuk membuka keyboard</string>
-    <string name="settings_show_shell_button">Tampilkan tombol shell</string>
-    <string name="settings_show_shell_button_desc">Tampilkan toggle mode shell di dekat tombol lampiran pada chat</string>
+    <string name="settings_show_shell_button">Tampilkan tombol Shell</string>
+    <string name="settings_show_shell_button_desc">Tampilkan atau sembunyikan tombol Shell di antarmuka</string>
     <string name="server_settings_providers">Penyedia</string>
     <string name="server_settings_providers_desc">Aktifkan atau nonaktifkan penyedia untuk server ini</string>
     <string name="server_settings_providers_connected">Terhubung</string>
@@ -464,4 +464,5 @@ Token: ~%4$d -&gt; ~%5$d</string>
     <string name="home_local_launch_options_title">Opsi peluncuran</string>
     <string name="chat_send_shell">Kirim perintah shell</string>
     <string name="chat_shell_mode_hold_send_hint">Mode shell aktif. Tahan Kirim untuk kembali.</string>
+    <string name="menu_review_changes">Tinjau perubahan</string>
 </resources>

@@ -344,7 +344,7 @@
     <string name="chat_terminal_connect_failed">Nie udało się otworzyć terminala</string>
     <string name="chat_terminal_tap_keyboard">Dotknij, aby otworzyć klawiaturę</string>
     <string name="settings_show_shell_button">Pokaż przycisk powłoki</string>
-    <string name="settings_show_shell_button_desc">Pokaż przełącznik trybu powłoki obok przycisku załącznika na czacie</string>
+    <string name="settings_show_shell_button_desc">Wyświetl przycisk umożliwiający dostęp do powłoki</string>
     <string name="server_settings_providers">Dostawcy</string>
     <string name="server_settings_providers_desc">Włącz lub wyłącz dostawców dla tego serwera</string>
     <string name="server_settings_providers_connected">Połączono</string>
@@ -458,4 +458,5 @@ Tokeny: ~%4$d -&gt; ~%5$d</string>
     <string name="home_local_launch_options_title">Opcje uruchamiania</string>
     <string name="chat_send_shell">Wyślij polecenie powłoki</string>
     <string name="chat_shell_mode_hold_send_hint">Tryb powłoki aktywny. Przytrzymaj Wyślij, aby wrócić.</string>
+    <string name="menu_review_changes">Przejrzyj zmiany</string>
 </resources>
