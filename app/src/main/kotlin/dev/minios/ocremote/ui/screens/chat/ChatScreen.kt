@@ -1567,7 +1567,10 @@ fun ChatScreen(
                                             )
                                         }
                                     }
-                                }
+                                },
+                                leadingIcon = {
+                                    Icon(Icons.Default.RateReview, contentDescription = null)
+                                },
                             )
                             // Show Share or Unshare depending on current share status
                             if (uiState.shareUrl != null) {
@@ -1884,6 +1887,15 @@ fun ChatScreen(
                         }
                         "shell" -> {
                             inputMode = ChatInputMode.SHELL.name
+                        }
+                        "review" -> {
+                            viewModel.executeCommand("review") { ok ->
+                                coroutineScope.launch {
+                                    snackbarHostState.showSnackbar(
+                                        if (ok) context.getString(R.string.chat_command_executed, "review") else context.getString(R.string.chat_command_failed, "review")
+                                    )
+                                }
+                            }
                         }
                         else -> {
                             // Server command — execute via API
@@ -3509,9 +3521,10 @@ private fun ChatMessageBubble(
     val assistantErrorText = formatAssistantErrorMessage(assistantMessage?.error)
     val userFallbackText = userMessage?.summary?.body?.takeIf { it.isNotBlank() }
         ?: userMessage?.summary?.title?.takeIf { it.isNotBlank() }
-    val hasRenderableUserContent = !isUser || visibleParts.isNotEmpty() || userFallbackText != null
-    if (!hasRenderableUserContent) {
-        return
+    val userCommandLabel = if (isUser) {
+        resolveUserCommandLabel(chatMessage.parts)
+    } else {
+        null
     }
 
     // For assistant messages: split into "content" (text, reasoning, patch) and "steps" (tool calls, step markers)
@@ -3529,6 +3542,16 @@ private fun ChatMessageBubble(
     } else {
         contentParts = visibleParts
         stepParts = emptyList()
+    }
+
+    val hasRenderableUserPart = contentParts.any(::isBubbleRenderablePart)
+    val hasRenderableUserContent = !isUser || hasRenderableUserPart || userFallbackText != null || userCommandLabel != null
+    val hasRenderableAssistantContent = isUser ||
+            contentParts.isNotEmpty() ||
+            stepParts.isNotEmpty() ||
+            assistantErrorText != null
+    if (!hasRenderableUserContent || !hasRenderableAssistantContent) {
+        return
     }
 
     val hasSteps = stepParts.isNotEmpty()
@@ -3656,6 +3679,7 @@ private fun ChatMessageBubble(
                     val otherParts = contentParts.filter { part ->
                         !(part is Part.File && part.mime.startsWith("image/") && !part.url.isNullOrBlank())
                     }
+                    val renderableOtherParts = otherParts.filter(::isBubbleRenderablePart)
 
                     // Render image thumbnails as a horizontal row
                     if (imageFiles.isNotEmpty()) {
@@ -3663,12 +3687,31 @@ private fun ChatMessageBubble(
                     }
 
                     // Render remaining parts
-                    for (part in otherParts) {
+                    for (part in renderableOtherParts) {
                         PartContent(
                             part = part,
                             textColor = textColor,
                             isUser = isUser
                         )
+                    }
+
+                    if (isUser && imageFiles.isEmpty() && renderableOtherParts.isEmpty() && userCommandLabel != null) {
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.RateReview,
+                                contentDescription = null,
+                                modifier = Modifier.size(16.dp),
+                                tint = textColor.copy(alpha = 0.7f)
+                            )
+                            Text(
+                                text = userCommandLabel,
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = textColor.copy(alpha = 0.85f)
+                            )
+                        }
                     }
 
                     if (!isUser && assistantErrorText != null) {
@@ -3797,6 +3840,66 @@ private fun ChatMessageBubble(
         } else {
             bubbleContent()
         }
+    }
+}
+
+private fun isBubbleRenderablePart(part: Part): Boolean {
+    return when (part) {
+        is Part.Text,
+        is Part.Reasoning,
+        is Part.Patch,
+        is Part.File,
+        is Part.Permission,
+        is Part.Question,
+        is Part.Abort,
+        is Part.Retry,
+        is Part.Tool -> true
+        else -> false
+    }
+}
+
+@Composable
+private fun resolveUserCommandLabel(parts: List<Part>): String? {
+    val subtaskParts = parts.filterIsInstance<Part.Subtask>()
+
+    val commandFromSubtask = subtaskParts
+        .firstNotNullOfOrNull { it.command }
+        ?.removePrefix("/")
+        ?.trim()
+        ?.lowercase()
+
+    val commandFromText = parts
+        .filterIsInstance<Part.Text>()
+        .firstNotNullOfOrNull { textPart ->
+            val text = textPart.text.trim()
+            if (!text.startsWith("/")) return@firstNotNullOfOrNull null
+            text.removePrefix("/").substringBefore(' ').trim().lowercase().takeIf { it.isNotBlank() }
+        }
+
+    val inferredReviewFromPrompt = subtaskParts.any { subtask ->
+        val prompt = subtask.prompt.lowercase()
+        val description = subtask.description?.lowercase().orEmpty()
+        "review changes" in prompt || "review" in description
+    }
+
+    val command = commandFromSubtask ?: commandFromText ?: if (inferredReviewFromPrompt) "review" else null
+
+    return when (command) {
+        "review" -> stringResource(R.string.menu_review_changes)
+        null -> {
+            val hasNonRenderableOnly = parts.any { part ->
+                part !is Part.Text &&
+                        part !is Part.Reasoning &&
+                        part !is Part.Patch &&
+                        part !is Part.File &&
+                        part !is Part.Permission &&
+                        part !is Part.Question &&
+                        part !is Part.Abort &&
+                        part !is Part.Retry
+            }
+            if (hasNonRenderableOnly) stringResource(R.string.chat_tool_running_command) else null
+        }
+        else -> stringResource(R.string.chat_tool_running_command)
     }
 }
 
