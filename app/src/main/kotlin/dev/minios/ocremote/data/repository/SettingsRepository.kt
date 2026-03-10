@@ -49,7 +49,9 @@ class SettingsRepository @Inject constructor(
         private val LOCAL_PROXY_URL_KEY = stringPreferencesKey("local_proxy_url")
         private val LOCAL_PROXY_NO_PROXY_KEY = stringPreferencesKey("local_proxy_no_proxy")
         private val LOCAL_SERVER_ALLOW_LAN_KEY = booleanPreferencesKey("local_server_allow_lan")
+        private val LOCAL_SERVER_USERNAME_KEY = stringPreferencesKey("local_server_username")
         private val LOCAL_SERVER_PASSWORD_KEY = stringPreferencesKey("local_server_password")
+        private val LOCAL_SERVER_RUN_IN_BACKGROUND_KEY = booleanPreferencesKey("local_server_run_in_background")
         private val LOCAL_SERVER_AUTO_START_KEY = booleanPreferencesKey("local_server_auto_start")
         private val LOCAL_SERVER_STARTUP_TIMEOUT_SEC_KEY = intPreferencesKey("local_server_startup_timeout_sec")
 
@@ -419,6 +421,20 @@ class SettingsRepository @Inject constructor(
     }
 
     /**
+     * Optional username used by local runtime server auth.
+     * Empty means server default username is used.
+     */
+    val localServerUsername: Flow<String> = dataStore.data.map { preferences ->
+        preferences[LOCAL_SERVER_USERNAME_KEY] ?: ""
+    }
+
+    suspend fun setLocalServerUsername(value: String) {
+        dataStore.edit { preferences ->
+            preferences[LOCAL_SERVER_USERNAME_KEY] = value.trim()
+        }
+    }
+
+    /**
      * Password used by local runtime server (OPENCODE_SERVER_PASSWORD).
      * Empty means unsecured local server.
      */
@@ -429,6 +445,19 @@ class SettingsRepository @Inject constructor(
     suspend fun setLocalServerPassword(value: String) {
         dataStore.edit { preferences ->
             preferences[LOCAL_SERVER_PASSWORD_KEY] = value.trim()
+        }
+    }
+
+    /**
+     * Whether local runtime start command should run in background via Termux RunCommandService.
+     */
+    val localServerRunInBackground: Flow<Boolean> = dataStore.data.map { preferences ->
+        preferences[LOCAL_SERVER_RUN_IN_BACKGROUND_KEY] ?: true
+    }
+
+    suspend fun setLocalServerRunInBackground(enabled: Boolean) {
+        dataStore.edit { preferences ->
+            preferences[LOCAL_SERVER_RUN_IN_BACKGROUND_KEY] = enabled
         }
     }
 

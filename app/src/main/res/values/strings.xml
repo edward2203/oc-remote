@@ -45,11 +45,16 @@
     <string name="home_local_proxy_enable">Use proxy for local runtime</string>
     <string name="home_local_proxy_url_label">Proxy URL</string>
     <string name="home_local_proxy_no_proxy_label">Proxy exclusions (NO_PROXY)</string>
+    <string name="home_local_server_username_label">Server username</string>
+    <string name="home_local_server_username_placeholder">Leave empty to use server default (opencode)</string>
     <string name="home_local_server_password_label">Server password</string>
     <string name="home_local_server_password_placeholder">Leave empty to disable authentication</string>
     <string name="home_local_lan_password_warning">LAN access is enabled without a password. Anyone on your network can open this server.</string>
+    <string name="home_local_run_background_label">Run server in background</string>
+    <string name="home_local_run_background_desc">Use Termux background task mode to start local runtime</string>
     <string name="home_local_auto_start_label">Auto-start local server on app launch</string>
     <string name="home_local_auto_start_desc">Start local runtime automatically when OC Remote opens</string>
+    <string name="home_local_auto_start_requires_background">Auto-start requires background mode</string>
     <string name="home_local_startup_timeout_label">Startup timeout</string>
     <string name="home_local_startup_timeout_value">%1$d sec</string>
     <string name="home_local_allow_lan_access">Allow LAN access</string>

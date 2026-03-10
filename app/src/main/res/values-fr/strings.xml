@@ -455,4 +455,9 @@
     <string name="chat_send_shell">Envoyer une commande shell</string>
     <string name="chat_shell_mode_hold_send_hint">Mode shell actif. Maintenez Envoyer pour revenir.</string>
     <string name="menu_review_changes">Examiner les modifications</string>
+    <string name="home_local_server_username_label">Nom d\'utilisateur du serveur</string>
+    <string name="home_local_server_username_placeholder">Laisser vide pour utiliser la valeur par défaut du serveur (opencode)</string>
+    <string name="home_local_run_background_label">Exécuter le serveur en arrière-plan</string>
+    <string name="home_local_run_background_desc">Utiliser le mode tâche en arrière-plan de Termux pour lancer l’environnement local</string>
+    <string name="home_local_auto_start_requires_background">Le démarrage automatique nécessite le mode arrière-plan</string>
 </resources>

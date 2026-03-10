@@ -85,7 +85,9 @@ fun SettingsScreen(
     val localProxyUrl by viewModel.localProxyUrl.collectAsState()
     val localProxyNoProxy by viewModel.localProxyNoProxy.collectAsState()
     val localServerAllowLan by viewModel.localServerAllowLan.collectAsState()
+    val localServerUsername by viewModel.localServerUsername.collectAsState()
     val localServerPassword by viewModel.localServerPassword.collectAsState()
+    val localServerRunInBackground by viewModel.localServerRunInBackground.collectAsState()
     val localServerAutoStart by viewModel.localServerAutoStart.collectAsState()
     val localServerStartupTimeoutSec by viewModel.localServerStartupTimeoutSec.collectAsState()
 
@@ -556,17 +558,21 @@ fun SettingsScreen(
                 proxyUrl = localProxyUrl,
                 noProxyList = localProxyNoProxy,
                 allowLanAccess = localServerAllowLan,
+                serverUsername = localServerUsername,
                 serverPassword = localServerPassword,
+                runInBackground = localServerRunInBackground,
                 autoStart = localServerAutoStart,
                 startupTimeoutSec = localServerStartupTimeoutSec,
                 onDismiss = { showLocalLaunchOptionsDialog = false },
-                onSave = { enabled, proxyUrl, noProxyList, allowLanAccess, serverPassword, autoStart, startupTimeoutSec ->
+                onSave = { enabled, proxyUrl, noProxyList, allowLanAccess, serverUsername, serverPassword, runInBackground, autoStart, startupTimeoutSec ->
                     viewModel.setLocalProxyEnabled(enabled)
                     viewModel.setLocalProxyUrl(proxyUrl)
                     viewModel.setLocalProxyNoProxy(noProxyList)
                     viewModel.setLocalServerAllowLan(allowLanAccess)
+                    viewModel.setLocalServerUsername(serverUsername)
                     viewModel.setLocalServerPassword(serverPassword)
-                    viewModel.setLocalServerAutoStart(autoStart)
+                    viewModel.setLocalServerRunInBackground(runInBackground)
+                    viewModel.setLocalServerAutoStart(autoStart && runInBackground)
                     viewModel.setLocalServerStartupTimeoutSec(startupTimeoutSec)
                     showLocalLaunchOptionsDialog = false
                 },
@@ -592,7 +598,9 @@ private fun LocalServerLaunchOptionsDialog(
     proxyUrl: String,
     noProxyList: String,
     allowLanAccess: Boolean,
+    serverUsername: String,
     serverPassword: String,
+    runInBackground: Boolean,
     autoStart: Boolean,
     startupTimeoutSec: Int,
     onDismiss: () -> Unit,
@@ -601,7 +609,9 @@ private fun LocalServerLaunchOptionsDialog(
         proxyUrl: String,
         noProxyList: String,
         allowLanAccess: Boolean,
+        serverUsername: String,
         serverPassword: String,
+        runInBackground: Boolean,
         autoStart: Boolean,
         startupTimeoutSec: Int,
     ) -> Unit,
@@ -611,7 +621,9 @@ private fun LocalServerLaunchOptionsDialog(
     var localProxyUrl by remember(proxyUrl) { mutableStateOf(proxyUrl) }
     var localNoProxyList by remember(noProxyList) { mutableStateOf(noProxyList) }
     var localAllowLanAccess by remember(allowLanAccess) { mutableStateOf(allowLanAccess) }
+    var localServerUsername by remember(serverUsername) { mutableStateOf(serverUsername) }
     var localServerPassword by remember(serverPassword) { mutableStateOf(serverPassword) }
+    var localRunInBackground by remember(runInBackground) { mutableStateOf(runInBackground) }
     var localAutoStart by remember(autoStart) { mutableStateOf(autoStart) }
     var localStartupTimeoutSec by remember(startupTimeoutSec) { mutableIntStateOf(startupTimeoutSec) }
     var maskProxyUrl by remember { mutableStateOf(true) }
@@ -663,6 +675,16 @@ private fun LocalServerLaunchOptionsDialog(
                 )
 
                 Text(stringResource(R.string.home_local_security_section), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+
+                OutlinedTextField(
+                    value = localServerUsername,
+                    onValueChange = { localServerUsername = it },
+                    modifier = Modifier.fillMaxWidth(),
+                    singleLine = true,
+                    label = { Text(stringResource(R.string.home_local_server_username_label)) },
+                    placeholder = { Text(stringResource(R.string.home_local_server_username_placeholder)) },
+                    keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(keyboardType = KeyboardType.Text),
+                )
 
                 OutlinedTextField(
                     value = localServerPassword,
@@ -747,12 +769,38 @@ private fun LocalServerLaunchOptionsDialog(
                 Text(stringResource(R.string.home_local_autostart_section), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
 
                 ListItem(
+                    headlineContent = { Text(stringResource(R.string.home_local_run_background_label)) },
+                    supportingContent = { Text(stringResource(R.string.home_local_run_background_desc)) },
+                    trailingContent = {
+                        Switch(
+                            checked = localRunInBackground,
+                            onCheckedChange = {
+                                localRunInBackground = it
+                                if (!it) {
+                                    localAutoStart = false
+                                }
+                            },
+                            colors = switchColors,
+                        )
+                    },
+                )
+
+                ListItem(
                     headlineContent = { Text(stringResource(R.string.home_local_auto_start_label)) },
-                    supportingContent = { Text(stringResource(R.string.home_local_auto_start_desc)) },
+                    supportingContent = {
+                        Text(
+                            if (localRunInBackground) {
+                                stringResource(R.string.home_local_auto_start_desc)
+                            } else {
+                                stringResource(R.string.home_local_auto_start_requires_background)
+                            }
+                        )
+                    },
                     trailingContent = {
                         Switch(
                             checked = localAutoStart,
                             onCheckedChange = { localAutoStart = it },
+                            enabled = localRunInBackground,
                             colors = switchColors,
                         )
                     },
@@ -792,8 +840,10 @@ private fun LocalServerLaunchOptionsDialog(
                         trimmedProxyUrl,
                         trimmedNoProxy,
                         localAllowLanAccess,
+                        localServerUsername.trim(),
                         trimmedServerPassword,
-                        localAutoStart,
+                        localRunInBackground,
+                        localAutoStart && localRunInBackground,
                         localStartupTimeoutSec,
                     )
                 },

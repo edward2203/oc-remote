@@ -457,4 +457,9 @@
     <string name="chat_send_shell">إرسال أمر شِل</string>
     <string name="chat_shell_mode_hold_send_hint">وضع الشِل نشط. اضغط مع الاستمرار على إرسال للعودة.</string>
     <string name="menu_review_changes">مراجعة التغييرات</string>
+    <string name="home_local_server_username_label">اسم المستخدم للخادم</string>
+    <string name="home_local_server_username_placeholder">اتركه فارغًا لاستخدام الإعداد الافتراضي للخادم (opencode)</string>
+    <string name="home_local_run_background_label">تشغيل الخادم في الخلفية</string>
+    <string name="home_local_run_background_desc">استخدم وضع المهام الخلفية في Termux لبدء التشغيل المحلي</string>
+    <string name="home_local_auto_start_requires_background">التشغيل التلقائي يتطلب وضع الخلفية</string>
 </resources>

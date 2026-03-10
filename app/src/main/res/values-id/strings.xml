@@ -463,4 +463,9 @@ Token: ~%4$d -&gt; ~%5$d</string>
     <string name="chat_send_shell">Kirim perintah shell</string>
     <string name="chat_shell_mode_hold_send_hint">Mode shell aktif. Tahan Kirim untuk kembali.</string>
     <string name="menu_review_changes">Tinjau perubahan</string>
+    <string name="home_local_server_username_label">Nama pengguna server</string>
+    <string name="home_local_server_username_placeholder">Biarkan kosong untuk menggunakan default server (opencode)</string>
+    <string name="home_local_run_background_label">Jalankan server di latar belakang</string>
+    <string name="home_local_run_background_desc">Gunakan mode tugas latar belakang Termux untuk memulai runtime lokal</string>
+    <string name="home_local_auto_start_requires_background">Auto-start memerlukan mode latar belakang</string>
 </resources>

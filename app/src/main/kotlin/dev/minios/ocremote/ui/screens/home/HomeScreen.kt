@@ -375,7 +375,9 @@ fun HomeScreen(
                 proxyUrl = uiState.localProxyUrl,
                 noProxyList = uiState.localProxyNoProxy,
                 allowLanAccess = uiState.localServerAllowLan,
+                serverUsername = uiState.localServerUsername,
                 serverPassword = uiState.localServerPassword,
+                runInBackground = uiState.localServerRunInBackground,
                 autoStart = uiState.localServerAutoStart,
                 startupTimeoutSec = uiState.localServerStartupTimeoutSec,
                 onDismiss = { showLocalLaunchOptionsDialog = false },
@@ -383,7 +385,9 @@ fun HomeScreen(
                 onProxyUrlChange = viewModel::setLocalProxyUrl,
                 onNoProxyListChange = viewModel::setLocalProxyNoProxy,
                 onAllowLanAccessChange = viewModel::setLocalServerAllowLan,
+                onServerUsernameChange = viewModel::setLocalServerUsername,
                 onServerPasswordChange = viewModel::setLocalServerPassword,
+                onRunInBackgroundChange = viewModel::setLocalServerRunInBackground,
                 onAutoStartChange = viewModel::setLocalServerAutoStart,
                 onStartupTimeoutSecChange = viewModel::setLocalServerStartupTimeoutSec,
             )
@@ -800,7 +804,9 @@ private fun LocalLaunchOptionsDialog(
     proxyUrl: String,
     noProxyList: String,
     allowLanAccess: Boolean,
+    serverUsername: String,
     serverPassword: String,
+    runInBackground: Boolean,
     autoStart: Boolean,
     startupTimeoutSec: Int,
     onDismiss: () -> Unit,
@@ -808,12 +814,15 @@ private fun LocalLaunchOptionsDialog(
     onProxyUrlChange: (String) -> Unit,
     onNoProxyListChange: (String) -> Unit,
     onAllowLanAccessChange: (Boolean) -> Unit,
+    onServerUsernameChange: (String) -> Unit,
     onServerPasswordChange: (String) -> Unit,
+    onRunInBackgroundChange: (Boolean) -> Unit,
     onAutoStartChange: (Boolean) -> Unit,
     onStartupTimeoutSecChange: (Int) -> Unit,
 ) {
     val isAmoled = MaterialTheme.colorScheme.background == Color.Black && MaterialTheme.colorScheme.surface == Color.Black
     val timeoutOptions = listOf(15, 30, 45, 60, 90, 120)
+    var localServerUsername by remember(serverUsername) { mutableStateOf(serverUsername) }
     var localServerPassword by remember(serverPassword) { mutableStateOf(serverPassword) }
     var localProxyUrl by remember(proxyUrl) { mutableStateOf(proxyUrl) }
     var localNoProxyList by remember(noProxyList) { mutableStateOf(noProxyList) }
@@ -895,6 +904,21 @@ private fun LocalLaunchOptionsDialog(
                         style = MaterialTheme.typography.labelMedium,
                         color = MaterialTheme.colorScheme.primary,
                         modifier = Modifier.padding(start = 16.dp)
+                    )
+                    OutlinedTextField(
+                        value = localServerUsername,
+                        onValueChange = {
+                            localServerUsername = it
+                            onServerUsernameChange(it.trim())
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 16.dp),
+                        singleLine = true,
+                        label = { Text(stringResource(R.string.home_local_server_username_label)) },
+                        placeholder = { Text(stringResource(R.string.home_local_server_username_placeholder)) },
+                        keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(keyboardType = KeyboardType.Text),
+                        colors = fieldColors,
                     )
                     OutlinedTextField(
                         value = localServerPassword,
@@ -1003,12 +1027,37 @@ private fun LocalLaunchOptionsDialog(
                         modifier = Modifier.padding(start = 16.dp)
                     )
                     ListItem(
-                        headlineContent = { Text(stringResource(R.string.home_local_auto_start_label)) },
-                        supportingContent = { Text(stringResource(R.string.home_local_auto_start_desc)) },
+                        headlineContent = { Text(stringResource(R.string.home_local_run_background_label)) },
+                        supportingContent = { Text(stringResource(R.string.home_local_run_background_desc)) },
                         trailingContent = {
-                            Switch(checked = autoStart, onCheckedChange = onAutoStartChange, colors = switchColors)
+                            Switch(checked = runInBackground, onCheckedChange = onRunInBackgroundChange, colors = switchColors)
                         },
-                        modifier = Modifier.clickable { onAutoStartChange(!autoStart) },
+                        modifier = Modifier.clickable { onRunInBackgroundChange(!runInBackground) },
+                    )
+                    ListItem(
+                        headlineContent = { Text(stringResource(R.string.home_local_auto_start_label)) },
+                        supportingContent = {
+                            Text(
+                                if (runInBackground) {
+                                    stringResource(R.string.home_local_auto_start_desc)
+                                } else {
+                                    stringResource(R.string.home_local_auto_start_requires_background)
+                                }
+                            )
+                        },
+                        trailingContent = {
+                            Switch(
+                                checked = autoStart,
+                                onCheckedChange = onAutoStartChange,
+                                enabled = runInBackground,
+                                colors = switchColors,
+                            )
+                        },
+                        modifier = if (runInBackground) {
+                            Modifier.clickable { onAutoStartChange(!autoStart) }
+                        } else {
+                            Modifier
+                        },
                     )
                     ListItem(
                         headlineContent = { Text(stringResource(R.string.home_local_startup_timeout_label)) },

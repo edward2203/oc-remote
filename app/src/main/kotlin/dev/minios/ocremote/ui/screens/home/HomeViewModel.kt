@@ -64,7 +64,9 @@ data class HomeUiState(
     val localProxyUrl: String = "",
     val localProxyNoProxy: String = LocalServerManager.DEFAULT_NO_PROXY_LIST,
     val localServerAllowLan: Boolean = false,
+    val localServerUsername: String = "",
     val localServerPassword: String = "",
+    val localServerRunInBackground: Boolean = true,
     val localServerAutoStart: Boolean = false,
     val localServerStartupTimeoutSec: Int = 30,
 )
@@ -142,8 +144,26 @@ class HomeViewModel @Inject constructor(
             }
         }
         viewModelScope.launch {
+            settingsRepository.localServerUsername.collect { value ->
+                _uiState.update { it.copy(localServerUsername = value) }
+            }
+        }
+        viewModelScope.launch {
             settingsRepository.localServerPassword.collect { value ->
                 _uiState.update { it.copy(localServerPassword = value) }
+            }
+        }
+        viewModelScope.launch {
+            settingsRepository.localServerRunInBackground.collect { enabled ->
+                _uiState.update { state ->
+                    state.copy(
+                        localServerRunInBackground = enabled,
+                        localServerAutoStart = if (enabled) state.localServerAutoStart else false,
+                    )
+                }
+                if (!enabled) {
+                    settingsRepository.setLocalServerAutoStart(false)
+                }
             }
         }
         viewModelScope.launch {
@@ -390,7 +410,12 @@ class HomeViewModel @Inject constructor(
                 return@launch
             }
 
-            val healthy = localServerManager.isServerHealthy()
+            val serverUsername = _uiState.value.localServerUsername.trim().ifBlank { "opencode" }
+            val serverPassword = _uiState.value.localServerPassword.trim().takeIf { it.isNotBlank() }
+            val healthy = localServerManager.isServerHealthy(
+                username = serverUsername,
+                password = serverPassword,
+            )
             if (healthy) {
                 // Server is running — mark setup as done (in case flag was never set)
                 settingsRepository.setLocalSetupCompleted(true)
@@ -427,7 +452,10 @@ class HomeViewModel @Inject constructor(
                 )
             }
 
-            if (setupDone && !localAutoStartTriggered && settingsRepository.localServerAutoStart.first()) {
+            if (setupDone && !localAutoStartTriggered &&
+                settingsRepository.localServerRunInBackground.first() &&
+                settingsRepository.localServerAutoStart.first()
+            ) {
                 localAutoStartTriggered = true
                 startLocalServer(getApplication())
             }
@@ -472,13 +500,17 @@ class HomeViewModel @Inject constructor(
             }
             val noProxyList = _uiState.value.localProxyNoProxy
             val hostName = if (_uiState.value.localServerAllowLan) "0.0.0.0" else "127.0.0.1"
+            val serverUsername = _uiState.value.localServerUsername.trim().takeIf { it.isNotBlank() }
             val serverPassword = _uiState.value.localServerPassword.trim().takeIf { it.isNotBlank() }
+            val runInBackground = _uiState.value.localServerRunInBackground
             val startResult = localServerManager.startServer(
                 callerContext = callerContext,
                 proxyUrl = proxyUrl,
                 noProxyList = noProxyList,
                 hostName = hostName,
+                serverUsername = serverUsername,
                 serverPassword = serverPassword,
+                runInBackground = runInBackground,
             )
             if (startResult.isFailure) {
                 val errorInfo = mapLocalRuntimeError(startResult.exceptionOrNull()?.message)
@@ -501,7 +533,11 @@ class HomeViewModel @Inject constructor(
             }
 
             val startupTimeoutMs = _uiState.value.localServerStartupTimeoutSec.coerceIn(10, 120) * 1000L
-            val ready = waitForLocalServerReady(timeoutMs = startupTimeoutMs)
+            val ready = waitForLocalServerReady(
+                timeoutMs = startupTimeoutMs,
+                username = serverUsername ?: "opencode",
+                password = serverPassword,
+            )
             if (!ready) {
                 _uiState.update {
                     it.copy(
@@ -569,7 +605,9 @@ class HomeViewModel @Inject constructor(
 
             repeat(6) {
                 delay(1000)
-                if (!localServerManager.isServerHealthy()) {
+                val username = _uiState.value.localServerUsername.trim().ifBlank { "opencode" }
+                val password = _uiState.value.localServerPassword.trim().takeIf { it.isNotBlank() }
+                if (!localServerManager.isServerHealthy(username = username, password = password)) {
                     _uiState.update {
                         it.copy(
                             localRuntimeStatus = LocalRuntimeStatus.Stopped,
@@ -617,15 +655,31 @@ class HomeViewModel @Inject constructor(
         }
     }
 
+    fun setLocalServerUsername(value: String) {
+        viewModelScope.launch {
+            settingsRepository.setLocalServerUsername(value)
+        }
+    }
+
     fun setLocalServerPassword(value: String) {
         viewModelScope.launch {
             settingsRepository.setLocalServerPassword(value)
         }
     }
 
+    fun setLocalServerRunInBackground(enabled: Boolean) {
+        viewModelScope.launch {
+            settingsRepository.setLocalServerRunInBackground(enabled)
+            if (!enabled) {
+                settingsRepository.setLocalServerAutoStart(false)
+            }
+        }
+    }
+
     fun setLocalServerAutoStart(enabled: Boolean) {
         viewModelScope.launch {
-            settingsRepository.setLocalServerAutoStart(enabled)
+            val runInBackground = settingsRepository.localServerRunInBackground.first()
+            settingsRepository.setLocalServerAutoStart(enabled && runInBackground)
         }
     }
 
@@ -635,10 +689,14 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    private suspend fun waitForLocalServerReady(timeoutMs: Long = 30000L): Boolean {
+    private suspend fun waitForLocalServerReady(
+        timeoutMs: Long = 30000L,
+        username: String,
+        password: String?,
+    ): Boolean {
         val deadline = System.currentTimeMillis() + timeoutMs
         while (System.currentTimeMillis() < deadline) {
-            if (localServerManager.isServerHealthy()) {
+            if (localServerManager.isServerHealthy(username = username, password = password)) {
                 return true
             }
             delay(1500)
@@ -647,15 +705,28 @@ class HomeViewModel @Inject constructor(
     }
 
     private suspend fun ensureLocalServerExists(): ServerConfig {
+        val desiredUsername = _uiState.value.localServerUsername.trim().ifBlank { "opencode" }
+        val desiredPassword = _uiState.value.localServerPassword.trim().takeIf { it.isNotBlank() }
+
         val existing = _uiState.value.servers.firstOrNull {
             it.url == LocalServerManager.LOCAL_SERVER_URL
         }
-        if (existing != null) return existing
+        if (existing != null) {
+            if (existing.username != desiredUsername || existing.password != desiredPassword) {
+                val updated = existing.copy(
+                    username = desiredUsername,
+                    password = desiredPassword,
+                )
+                serverRepository.updateServer(updated)
+                return updated
+            }
+            return existing
+        }
 
         return serverRepository.addServer(
             url = LocalServerManager.LOCAL_SERVER_URL,
-            username = "opencode",
-            password = null,
+            username = desiredUsername,
+            password = desiredPassword,
             name = LOCAL_SERVER_NAME,
             autoConnect = false,
         )

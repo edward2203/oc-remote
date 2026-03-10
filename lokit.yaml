@@ -9,5 +9,5 @@ languages: [ru, de, es, fr, it, id, pt-BR, ja, ko, zh-CN, uk, tr, ar, pl]
 
 targets:
   - name: OC Remote Android
-    type: android
+    format: android
     dir: app/src/main/res

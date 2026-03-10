@@ -457,4 +457,9 @@ Token: ~%4$d -&gt; ~%5$d</string>
     <string name="chat_send_shell">Kabuk komutu gönder</string>
     <string name="chat_shell_mode_hold_send_hint">Kabuk modu aktif. Geri dönmek için Gönder\'e basılı tutun.</string>
     <string name="menu_review_changes">Değişiklikleri gözden geçir</string>
+    <string name="home_local_server_username_label">Sunucu kullanıcı adı</string>
+    <string name="home_local_server_username_placeholder">Sunucu varsayılanını kullanmak için boş bırakın (opencode)</string>
+    <string name="home_local_run_background_label">Sunucuyu arka planda çalıştır</string>
+    <string name="home_local_run_background_desc">Yerel çalışma zamanını başlatmak için Termux arka plan görev modunu kullan</string>
+    <string name="home_local_auto_start_requires_background">Otomatik başlatma için arka plan modu gerekli</string>
 </resources>

@@ -457,4 +457,9 @@ Tokens: ~%4$d -&gt; ~%5$d</string>
     <string name="chat_send_shell">Enviar comando shell</string>
     <string name="chat_shell_mode_hold_send_hint">Modo shell activo. Mantén presionado Enviar para volver.</string>
     <string name="menu_review_changes">Revisar cambios</string>
+    <string name="home_local_server_username_label">Nombre de usuario del servidor</string>
+    <string name="home_local_server_username_placeholder">Déjalo en blanco para usar el valor predeterminado del servidor (opencode)</string>
+    <string name="home_local_run_background_label">Ejecutar servidor en segundo plano</string>
+    <string name="home_local_run_background_desc">Usar el modo de tarea en segundo plano de Termux para iniciar el entorno local</string>
+    <string name="home_local_auto_start_requires_background">El inicio automático requiere el modo en segundo plano</string>
 </resources>

@@ -10,6 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.net.HttpURLConnection
 import java.net.URL
+import java.util.Base64
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -80,13 +81,20 @@ class LocalServerManager @Inject constructor(
         }
     }
 
-    suspend fun isServerHealthy(): Boolean = withContext(Dispatchers.IO) {
+    suspend fun isServerHealthy(
+        username: String? = null,
+        password: String? = null,
+    ): Boolean = withContext(Dispatchers.IO) {
         val healthUrl = "$LOCAL_SERVER_URL/global/health"
         return@withContext try {
             val conn = (URL(healthUrl).openConnection() as HttpURLConnection).apply {
                 requestMethod = "GET"
                 connectTimeout = 2000
                 readTimeout = 2000
+                val authHeader = basicAuthHeader(username, password)
+                if (authHeader != null) {
+                    setRequestProperty("Authorization", authHeader)
+                }
             }
             conn.inputStream.bufferedReader().use { reader ->
                 conn.responseCode in 200..299 && reader.readText().contains("\"healthy\":true")
@@ -96,12 +104,22 @@ class LocalServerManager @Inject constructor(
         }
     }
 
+    private fun basicAuthHeader(username: String?, password: String?): String? {
+        val normalizedPassword = password?.takeIf { it.isNotBlank() } ?: return null
+        val normalizedUsername = username?.takeIf { it.isNotBlank() } ?: "opencode"
+        val raw = "$normalizedUsername:$normalizedPassword"
+        val encoded = Base64.getEncoder().encodeToString(raw.toByteArray())
+        return "Basic $encoded"
+    }
+
     fun startServer(
         callerContext: Context,
         proxyUrl: String? = null,
         noProxyList: String? = null,
         hostName: String? = null,
+        serverUsername: String? = null,
         serverPassword: String? = null,
+        runInBackground: Boolean = true,
     ): Result<Unit> {
         return runCatching {
             check(isTermuxInstalled()) { "Termux is not installed" }
@@ -114,6 +132,11 @@ class LocalServerManager @Inject constructor(
                 if (!serverPassword.isNullOrBlank()) {
                     add("--server-password")
                     add(serverPassword)
+                }
+
+                if (!serverUsername.isNullOrBlank()) {
+                    add("--server-username")
+                    add(serverUsername)
                 }
 
                 if (!proxyUrl.isNullOrBlank()) {
@@ -136,8 +159,7 @@ class LocalServerManager @Inject constructor(
             val intent = buildRunCommandIntent(
                 commandPath = START_SCRIPT,
                 args = args.toTypedArray(),
-                // Run fully in background so start does not require opening Termux UI/tab.
-                background = true,
+                background = runInBackground,
                 sessionAction = "0",
             )
             startRunCommandService(callerContext, intent)

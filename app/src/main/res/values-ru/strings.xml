@@ -458,4 +458,9 @@
     <string name="chat_send_shell">Отправить команду shell</string>
     <string name="chat_shell_mode_hold_send_hint">Режим shell активен. Удерживайте «Отправить», чтобы вернуться назад.</string>
     <string name="menu_review_changes">Просмотреть изменения</string>
+    <string name="home_local_server_username_label">Имя пользователя сервера</string>
+    <string name="home_local_server_username_placeholder">Оставьте пустым, чтобы использовать значение по умолчанию сервера (opencode)</string>
+    <string name="home_local_run_background_label">Запустить сервер в фоновом режиме</string>
+    <string name="home_local_run_background_desc">Использовать фоновый режим Termux для запуска локального окружения</string>
+    <string name="home_local_auto_start_requires_background">Автозапуск требует фонового режима</string>
 </resources>

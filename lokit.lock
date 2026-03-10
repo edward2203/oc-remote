@@ -177,6 +177,7 @@ checksums:
         home_local_allow_lan_access_desc: 47a826905c99b4a13f24a23fff5b415b
         home_local_auto_start_desc: a8ba4faf1be48373cbb1a84da198c793
         home_local_auto_start_label: b8859a0020a842b9c0bc797cdc868ae8
+        home_local_auto_start_requires_background: 10965092a245b719e291a3e927f83ae8
         home_local_autostart_section: 1070a14f8490cd930893618e4ca21348
         home_local_copy_fix_command: 48699787c17b28bcf5ee74dec6605732
         home_local_error_background_launch: 1b906f82bd3fd3ca997ee4d16a9e876a
@@ -205,11 +206,15 @@ checksums:
         home_local_proxy_settings: e4628b0bce2a7ce679d631929870c788
         home_local_proxy_show_url: c10c020d03734bb0ef7cd5a720f330f3
         home_local_proxy_url_label: 29c38960a20a3ee1f0b53d6d377a9040
+        home_local_run_background_desc: d2e373f3247c8d105de29c1d98883afe
+        home_local_run_background_label: 7cf70c2f5a2f377aabe3b6178023387d
         home_local_security_section: b78af4f33cb90832a8b4bc132975205b
         home_local_server_desc: 0d6218b8f6f13aef6014dc456eeb1d64
         home_local_server_password_label: 051f0334416d7359675076620cc335b6
         home_local_server_password_placeholder: 68e575e46a28fc42eb7fd5e38d830126
         home_local_server_title: 6be0b93c16651a84df725a2bbe4c825a
+        home_local_server_username_label: 985ebbd93602f58dc1b30b2e0a3ac591
+        home_local_server_username_placeholder: 74dd16fb6be82a8ba52d54f9640fd6b6
         home_local_setup: f72ccf2b23aa2ed08eb60fe112a3b0d2
         home_local_setup_copied: c10d973c084170e7c5c44bfed68dc787
         home_local_setup_desc: 2d196b1ed178ea22a77c551170837e70
@@ -625,6 +630,7 @@ checksums:
         home_local_allow_lan_access_desc: 47a826905c99b4a13f24a23fff5b415b
         home_local_auto_start_desc: a8ba4faf1be48373cbb1a84da198c793
         home_local_auto_start_label: b8859a0020a842b9c0bc797cdc868ae8
+        home_local_auto_start_requires_background: 10965092a245b719e291a3e927f83ae8
         home_local_autostart_section: 1070a14f8490cd930893618e4ca21348
         home_local_copy_fix_command: 48699787c17b28bcf5ee74dec6605732
         home_local_error_background_launch: 1b906f82bd3fd3ca997ee4d16a9e876a
@@ -653,11 +659,15 @@ checksums:
         home_local_proxy_settings: e4628b0bce2a7ce679d631929870c788
         home_local_proxy_show_url: c10c020d03734bb0ef7cd5a720f330f3
         home_local_proxy_url_label: 29c38960a20a3ee1f0b53d6d377a9040
+        home_local_run_background_desc: d2e373f3247c8d105de29c1d98883afe
+        home_local_run_background_label: 7cf70c2f5a2f377aabe3b6178023387d
         home_local_security_section: b78af4f33cb90832a8b4bc132975205b
         home_local_server_desc: 0d6218b8f6f13aef6014dc456eeb1d64
         home_local_server_password_label: 051f0334416d7359675076620cc335b6
         home_local_server_password_placeholder: 68e575e46a28fc42eb7fd5e38d830126
         home_local_server_title: 6be0b93c16651a84df725a2bbe4c825a
+        home_local_server_username_label: 985ebbd93602f58dc1b30b2e0a3ac591
+        home_local_server_username_placeholder: 74dd16fb6be82a8ba52d54f9640fd6b6
         home_local_setup: f72ccf2b23aa2ed08eb60fe112a3b0d2
         home_local_setup_copied: c10d973c084170e7c5c44bfed68dc787
         home_local_setup_desc: 2d196b1ed178ea22a77c551170837e70
@@ -1073,6 +1083,7 @@ checksums:
         home_local_allow_lan_access_desc: 47a826905c99b4a13f24a23fff5b415b
         home_local_auto_start_desc: a8ba4faf1be48373cbb1a84da198c793
         home_local_auto_start_label: b8859a0020a842b9c0bc797cdc868ae8
+        home_local_auto_start_requires_background: 10965092a245b719e291a3e927f83ae8
         home_local_autostart_section: 1070a14f8490cd930893618e4ca21348
         home_local_copy_fix_command: 48699787c17b28bcf5ee74dec6605732
         home_local_error_background_launch: 1b906f82bd3fd3ca997ee4d16a9e876a
@@ -1101,11 +1112,15 @@ checksums:
         home_local_proxy_settings: e4628b0bce2a7ce679d631929870c788
         home_local_proxy_show_url: c10c020d03734bb0ef7cd5a720f330f3
         home_local_proxy_url_label: 29c38960a20a3ee1f0b53d6d377a9040
+        home_local_run_background_desc: d2e373f3247c8d105de29c1d98883afe
+        home_local_run_background_label: 7cf70c2f5a2f377aabe3b6178023387d
         home_local_security_section: b78af4f33cb90832a8b4bc132975205b
         home_local_server_desc: 0d6218b8f6f13aef6014dc456eeb1d64
         home_local_server_password_label: 051f0334416d7359675076620cc335b6
         home_local_server_password_placeholder: 68e575e46a28fc42eb7fd5e38d830126
         home_local_server_title: 6be0b93c16651a84df725a2bbe4c825a
+        home_local_server_username_label: 985ebbd93602f58dc1b30b2e0a3ac591
+        home_local_server_username_placeholder: 74dd16fb6be82a8ba52d54f9640fd6b6
         home_local_setup: f72ccf2b23aa2ed08eb60fe112a3b0d2
         home_local_setup_copied: c10d973c084170e7c5c44bfed68dc787
         home_local_setup_desc: 2d196b1ed178ea22a77c551170837e70
@@ -1521,6 +1536,7 @@ checksums:
         home_local_allow_lan_access_desc: 47a826905c99b4a13f24a23fff5b415b
         home_local_auto_start_desc: a8ba4faf1be48373cbb1a84da198c793
         home_local_auto_start_label: b8859a0020a842b9c0bc797cdc868ae8
+        home_local_auto_start_requires_background: 10965092a245b719e291a3e927f83ae8
         home_local_autostart_section: 1070a14f8490cd930893618e4ca21348
         home_local_copy_fix_command: 48699787c17b28bcf5ee74dec6605732
         home_local_error_background_launch: 1b906f82bd3fd3ca997ee4d16a9e876a
@@ -1549,11 +1565,15 @@ checksums:
         home_local_proxy_settings: e4628b0bce2a7ce679d631929870c788
         home_local_proxy_show_url: c10c020d03734bb0ef7cd5a720f330f3
         home_local_proxy_url_label: 29c38960a20a3ee1f0b53d6d377a9040
+        home_local_run_background_desc: d2e373f3247c8d105de29c1d98883afe
+        home_local_run_background_label: 7cf70c2f5a2f377aabe3b6178023387d
         home_local_security_section: b78af4f33cb90832a8b4bc132975205b
         home_local_server_desc: 0d6218b8f6f13aef6014dc456eeb1d64
         home_local_server_password_label: 051f0334416d7359675076620cc335b6
         home_local_server_password_placeholder: 68e575e46a28fc42eb7fd5e38d830126
         home_local_server_title: 6be0b93c16651a84df725a2bbe4c825a
+        home_local_server_username_label: 985ebbd93602f58dc1b30b2e0a3ac591
+        home_local_server_username_placeholder: 74dd16fb6be82a8ba52d54f9640fd6b6
         home_local_setup: f72ccf2b23aa2ed08eb60fe112a3b0d2
         home_local_setup_copied: c10d973c084170e7c5c44bfed68dc787
         home_local_setup_desc: 2d196b1ed178ea22a77c551170837e70
@@ -1969,6 +1989,7 @@ checksums:
         home_local_allow_lan_access_desc: 47a826905c99b4a13f24a23fff5b415b
         home_local_auto_start_desc: a8ba4faf1be48373cbb1a84da198c793
         home_local_auto_start_label: b8859a0020a842b9c0bc797cdc868ae8
+        home_local_auto_start_requires_background: 10965092a245b719e291a3e927f83ae8
         home_local_autostart_section: 1070a14f8490cd930893618e4ca21348
         home_local_copy_fix_command: 48699787c17b28bcf5ee74dec6605732
         home_local_error_background_launch: 1b906f82bd3fd3ca997ee4d16a9e876a
@@ -1997,11 +2018,15 @@ checksums:
         home_local_proxy_settings: e4628b0bce2a7ce679d631929870c788
         home_local_proxy_show_url: c10c020d03734bb0ef7cd5a720f330f3
         home_local_proxy_url_label: 29c38960a20a3ee1f0b53d6d377a9040
+        home_local_run_background_desc: d2e373f3247c8d105de29c1d98883afe
+        home_local_run_background_label: 7cf70c2f5a2f377aabe3b6178023387d
         home_local_security_section: b78af4f33cb90832a8b4bc132975205b
         home_local_server_desc: 0d6218b8f6f13aef6014dc456eeb1d64
         home_local_server_password_label: 051f0334416d7359675076620cc335b6
         home_local_server_password_placeholder: 68e575e46a28fc42eb7fd5e38d830126
         home_local_server_title: 6be0b93c16651a84df725a2bbe4c825a
+        home_local_server_username_label: 985ebbd93602f58dc1b30b2e0a3ac591
+        home_local_server_username_placeholder: 74dd16fb6be82a8ba52d54f9640fd6b6
         home_local_setup: f72ccf2b23aa2ed08eb60fe112a3b0d2
         home_local_setup_copied: c10d973c084170e7c5c44bfed68dc787
         home_local_setup_desc: 2d196b1ed178ea22a77c551170837e70
@@ -2417,6 +2442,7 @@ checksums:
         home_local_allow_lan_access_desc: 47a826905c99b4a13f24a23fff5b415b
         home_local_auto_start_desc: a8ba4faf1be48373cbb1a84da198c793
         home_local_auto_start_label: b8859a0020a842b9c0bc797cdc868ae8
+        home_local_auto_start_requires_background: 10965092a245b719e291a3e927f83ae8
         home_local_autostart_section: 1070a14f8490cd930893618e4ca21348
         home_local_copy_fix_command: 48699787c17b28bcf5ee74dec6605732
         home_local_error_background_launch: 1b906f82bd3fd3ca997ee4d16a9e876a
@@ -2445,11 +2471,15 @@ checksums:
         home_local_proxy_settings: e4628b0bce2a7ce679d631929870c788
         home_local_proxy_show_url: c10c020d03734bb0ef7cd5a720f330f3
         home_local_proxy_url_label: 29c38960a20a3ee1f0b53d6d377a9040
+        home_local_run_background_desc: d2e373f3247c8d105de29c1d98883afe
+        home_local_run_background_label: 7cf70c2f5a2f377aabe3b6178023387d
         home_local_security_section: b78af4f33cb90832a8b4bc132975205b
         home_local_server_desc: 0d6218b8f6f13aef6014dc456eeb1d64
         home_local_server_password_label: 051f0334416d7359675076620cc335b6
         home_local_server_password_placeholder: 68e575e46a28fc42eb7fd5e38d830126
         home_local_server_title: 6be0b93c16651a84df725a2bbe4c825a
+        home_local_server_username_label: 985ebbd93602f58dc1b30b2e0a3ac591
+        home_local_server_username_placeholder: 74dd16fb6be82a8ba52d54f9640fd6b6
         home_local_setup: f72ccf2b23aa2ed08eb60fe112a3b0d2
         home_local_setup_copied: c10d973c084170e7c5c44bfed68dc787
         home_local_setup_desc: 2d196b1ed178ea22a77c551170837e70
@@ -2865,6 +2895,7 @@ checksums:
         home_local_allow_lan_access_desc: 47a826905c99b4a13f24a23fff5b415b
         home_local_auto_start_desc: a8ba4faf1be48373cbb1a84da198c793
         home_local_auto_start_label: b8859a0020a842b9c0bc797cdc868ae8
+        home_local_auto_start_requires_background: 10965092a245b719e291a3e927f83ae8
         home_local_autostart_section: 1070a14f8490cd930893618e4ca21348
         home_local_copy_fix_command: 48699787c17b28bcf5ee74dec6605732
         home_local_error_background_launch: 1b906f82bd3fd3ca997ee4d16a9e876a
@@ -2893,11 +2924,15 @@ checksums:
         home_local_proxy_settings: e4628b0bce2a7ce679d631929870c788
         home_local_proxy_show_url: c10c020d03734bb0ef7cd5a720f330f3
         home_local_proxy_url_label: 29c38960a20a3ee1f0b53d6d377a9040
+        home_local_run_background_desc: d2e373f3247c8d105de29c1d98883afe
+        home_local_run_background_label: 7cf70c2f5a2f377aabe3b6178023387d
         home_local_security_section: b78af4f33cb90832a8b4bc132975205b
         home_local_server_desc: 0d6218b8f6f13aef6014dc456eeb1d64
         home_local_server_password_label: 051f0334416d7359675076620cc335b6
         home_local_server_password_placeholder: 68e575e46a28fc42eb7fd5e38d830126
         home_local_server_title: 6be0b93c16651a84df725a2bbe4c825a
+        home_local_server_username_label: 985ebbd93602f58dc1b30b2e0a3ac591
+        home_local_server_username_placeholder: 74dd16fb6be82a8ba52d54f9640fd6b6
         home_local_setup: f72ccf2b23aa2ed08eb60fe112a3b0d2
         home_local_setup_copied: c10d973c084170e7c5c44bfed68dc787
         home_local_setup_desc: 2d196b1ed178ea22a77c551170837e70
@@ -3313,6 +3348,7 @@ checksums:
         home_local_allow_lan_access_desc: 47a826905c99b4a13f24a23fff5b415b
         home_local_auto_start_desc: a8ba4faf1be48373cbb1a84da198c793
         home_local_auto_start_label: b8859a0020a842b9c0bc797cdc868ae8
+        home_local_auto_start_requires_background: 10965092a245b719e291a3e927f83ae8
         home_local_autostart_section: 1070a14f8490cd930893618e4ca21348
         home_local_copy_fix_command: 48699787c17b28bcf5ee74dec6605732
         home_local_error_background_launch: 1b906f82bd3fd3ca997ee4d16a9e876a
@@ -3341,11 +3377,15 @@ checksums:
         home_local_proxy_settings: e4628b0bce2a7ce679d631929870c788
         home_local_proxy_show_url: c10c020d03734bb0ef7cd5a720f330f3
         home_local_proxy_url_label: 29c38960a20a3ee1f0b53d6d377a9040
+        home_local_run_background_desc: d2e373f3247c8d105de29c1d98883afe
+        home_local_run_background_label: 7cf70c2f5a2f377aabe3b6178023387d
         home_local_security_section: b78af4f33cb90832a8b4bc132975205b
         home_local_server_desc: 0d6218b8f6f13aef6014dc456eeb1d64
         home_local_server_password_label: 051f0334416d7359675076620cc335b6
         home_local_server_password_placeholder: 68e575e46a28fc42eb7fd5e38d830126
         home_local_server_title: 6be0b93c16651a84df725a2bbe4c825a
+        home_local_server_username_label: 985ebbd93602f58dc1b30b2e0a3ac591
+        home_local_server_username_placeholder: 74dd16fb6be82a8ba52d54f9640fd6b6
         home_local_setup: f72ccf2b23aa2ed08eb60fe112a3b0d2
         home_local_setup_copied: c10d973c084170e7c5c44bfed68dc787
         home_local_setup_desc: 2d196b1ed178ea22a77c551170837e70
@@ -3761,6 +3801,7 @@ checksums:
         home_local_allow_lan_access_desc: 47a826905c99b4a13f24a23fff5b415b
         home_local_auto_start_desc: a8ba4faf1be48373cbb1a84da198c793
         home_local_auto_start_label: b8859a0020a842b9c0bc797cdc868ae8
+        home_local_auto_start_requires_background: 10965092a245b719e291a3e927f83ae8
         home_local_autostart_section: 1070a14f8490cd930893618e4ca21348
         home_local_copy_fix_command: 48699787c17b28bcf5ee74dec6605732
         home_local_error_background_launch: 1b906f82bd3fd3ca997ee4d16a9e876a
@@ -3789,11 +3830,15 @@ checksums:
         home_local_proxy_settings: e4628b0bce2a7ce679d631929870c788
         home_local_proxy_show_url: c10c020d03734bb0ef7cd5a720f330f3
         home_local_proxy_url_label: 29c38960a20a3ee1f0b53d6d377a9040
+        home_local_run_background_desc: d2e373f3247c8d105de29c1d98883afe
+        home_local_run_background_label: 7cf70c2f5a2f377aabe3b6178023387d
         home_local_security_section: b78af4f33cb90832a8b4bc132975205b
         home_local_server_desc: 0d6218b8f6f13aef6014dc456eeb1d64
         home_local_server_password_label: 051f0334416d7359675076620cc335b6
         home_local_server_password_placeholder: 68e575e46a28fc42eb7fd5e38d830126
         home_local_server_title: 6be0b93c16651a84df725a2bbe4c825a
+        home_local_server_username_label: 985ebbd93602f58dc1b30b2e0a3ac591
+        home_local_server_username_placeholder: 74dd16fb6be82a8ba52d54f9640fd6b6
         home_local_setup: f72ccf2b23aa2ed08eb60fe112a3b0d2
         home_local_setup_copied: c10d973c084170e7c5c44bfed68dc787
         home_local_setup_desc: 2d196b1ed178ea22a77c551170837e70
@@ -4209,6 +4254,7 @@ checksums:
         home_local_allow_lan_access_desc: 47a826905c99b4a13f24a23fff5b415b
         home_local_auto_start_desc: a8ba4faf1be48373cbb1a84da198c793
         home_local_auto_start_label: b8859a0020a842b9c0bc797cdc868ae8
+        home_local_auto_start_requires_background: 10965092a245b719e291a3e927f83ae8
         home_local_autostart_section: 1070a14f8490cd930893618e4ca21348
         home_local_copy_fix_command: 48699787c17b28bcf5ee74dec6605732
         home_local_error_background_launch: 1b906f82bd3fd3ca997ee4d16a9e876a
@@ -4237,11 +4283,15 @@ checksums:
         home_local_proxy_settings: e4628b0bce2a7ce679d631929870c788
         home_local_proxy_show_url: c10c020d03734bb0ef7cd5a720f330f3
         home_local_proxy_url_label: 29c38960a20a3ee1f0b53d6d377a9040
+        home_local_run_background_desc: d2e373f3247c8d105de29c1d98883afe
+        home_local_run_background_label: 7cf70c2f5a2f377aabe3b6178023387d
         home_local_security_section: b78af4f33cb90832a8b4bc132975205b
         home_local_server_desc: 0d6218b8f6f13aef6014dc456eeb1d64
         home_local_server_password_label: 051f0334416d7359675076620cc335b6
         home_local_server_password_placeholder: 68e575e46a28fc42eb7fd5e38d830126
         home_local_server_title: 6be0b93c16651a84df725a2bbe4c825a
+        home_local_server_username_label: 985ebbd93602f58dc1b30b2e0a3ac591
+        home_local_server_username_placeholder: 74dd16fb6be82a8ba52d54f9640fd6b6
         home_local_setup: f72ccf2b23aa2ed08eb60fe112a3b0d2
         home_local_setup_copied: c10d973c084170e7c5c44bfed68dc787
         home_local_setup_desc: 2d196b1ed178ea22a77c551170837e70
@@ -4657,6 +4707,7 @@ checksums:
         home_local_allow_lan_access_desc: 47a826905c99b4a13f24a23fff5b415b
         home_local_auto_start_desc: a8ba4faf1be48373cbb1a84da198c793
         home_local_auto_start_label: b8859a0020a842b9c0bc797cdc868ae8
+        home_local_auto_start_requires_background: 10965092a245b719e291a3e927f83ae8
         home_local_autostart_section: 1070a14f8490cd930893618e4ca21348
         home_local_copy_fix_command: 48699787c17b28bcf5ee74dec6605732
         home_local_error_background_launch: 1b906f82bd3fd3ca997ee4d16a9e876a
@@ -4685,11 +4736,15 @@ checksums:
         home_local_proxy_settings: e4628b0bce2a7ce679d631929870c788
         home_local_proxy_show_url: c10c020d03734bb0ef7cd5a720f330f3
         home_local_proxy_url_label: 29c38960a20a3ee1f0b53d6d377a9040
+        home_local_run_background_desc: d2e373f3247c8d105de29c1d98883afe
+        home_local_run_background_label: 7cf70c2f5a2f377aabe3b6178023387d
         home_local_security_section: b78af4f33cb90832a8b4bc132975205b
         home_local_server_desc: 0d6218b8f6f13aef6014dc456eeb1d64
         home_local_server_password_label: 051f0334416d7359675076620cc335b6
         home_local_server_password_placeholder: 68e575e46a28fc42eb7fd5e38d830126
         home_local_server_title: 6be0b93c16651a84df725a2bbe4c825a
+        home_local_server_username_label: 985ebbd93602f58dc1b30b2e0a3ac591
+        home_local_server_username_placeholder: 74dd16fb6be82a8ba52d54f9640fd6b6
         home_local_setup: f72ccf2b23aa2ed08eb60fe112a3b0d2
         home_local_setup_copied: c10d973c084170e7c5c44bfed68dc787
         home_local_setup_desc: 2d196b1ed178ea22a77c551170837e70
@@ -5105,6 +5160,7 @@ checksums:
         home_local_allow_lan_access_desc: 47a826905c99b4a13f24a23fff5b415b
         home_local_auto_start_desc: a8ba4faf1be48373cbb1a84da198c793
         home_local_auto_start_label: b8859a0020a842b9c0bc797cdc868ae8
+        home_local_auto_start_requires_background: 10965092a245b719e291a3e927f83ae8
         home_local_autostart_section: 1070a14f8490cd930893618e4ca21348
         home_local_copy_fix_command: 48699787c17b28bcf5ee74dec6605732
         home_local_error_background_launch: 1b906f82bd3fd3ca997ee4d16a9e876a
@@ -5133,11 +5189,15 @@ checksums:
         home_local_proxy_settings: e4628b0bce2a7ce679d631929870c788
         home_local_proxy_show_url: c10c020d03734bb0ef7cd5a720f330f3
         home_local_proxy_url_label: 29c38960a20a3ee1f0b53d6d377a9040
+        home_local_run_background_desc: d2e373f3247c8d105de29c1d98883afe
+        home_local_run_background_label: 7cf70c2f5a2f377aabe3b6178023387d
         home_local_security_section: b78af4f33cb90832a8b4bc132975205b
         home_local_server_desc: 0d6218b8f6f13aef6014dc456eeb1d64
         home_local_server_password_label: 051f0334416d7359675076620cc335b6
         home_local_server_password_placeholder: 68e575e46a28fc42eb7fd5e38d830126
         home_local_server_title: 6be0b93c16651a84df725a2bbe4c825a
+        home_local_server_username_label: 985ebbd93602f58dc1b30b2e0a3ac591
+        home_local_server_username_placeholder: 74dd16fb6be82a8ba52d54f9640fd6b6
         home_local_setup: f72ccf2b23aa2ed08eb60fe112a3b0d2
         home_local_setup_copied: c10d973c084170e7c5c44bfed68dc787
         home_local_setup_desc: 2d196b1ed178ea22a77c551170837e70
@@ -5553,6 +5613,7 @@ checksums:
         home_local_allow_lan_access_desc: 47a826905c99b4a13f24a23fff5b415b
         home_local_auto_start_desc: a8ba4faf1be48373cbb1a84da198c793
         home_local_auto_start_label: b8859a0020a842b9c0bc797cdc868ae8
+        home_local_auto_start_requires_background: 10965092a245b719e291a3e927f83ae8
         home_local_autostart_section: 1070a14f8490cd930893618e4ca21348
         home_local_copy_fix_command: 48699787c17b28bcf5ee74dec6605732
         home_local_error_background_launch: 1b906f82bd3fd3ca997ee4d16a9e876a
@@ -5581,11 +5642,15 @@ checksums:
         home_local_proxy_settings: e4628b0bce2a7ce679d631929870c788
         home_local_proxy_show_url: c10c020d03734bb0ef7cd5a720f330f3
         home_local_proxy_url_label: 29c38960a20a3ee1f0b53d6d377a9040
+        home_local_run_background_desc: d2e373f3247c8d105de29c1d98883afe
+        home_local_run_background_label: 7cf70c2f5a2f377aabe3b6178023387d
         home_local_security_section: b78af4f33cb90832a8b4bc132975205b
         home_local_server_desc: 0d6218b8f6f13aef6014dc456eeb1d64
         home_local_server_password_label: 051f0334416d7359675076620cc335b6
         home_local_server_password_placeholder: 68e575e46a28fc42eb7fd5e38d830126
         home_local_server_title: 6be0b93c16651a84df725a2bbe4c825a
+        home_local_server_username_label: 985ebbd93602f58dc1b30b2e0a3ac591
+        home_local_server_username_placeholder: 74dd16fb6be82a8ba52d54f9640fd6b6
         home_local_setup: f72ccf2b23aa2ed08eb60fe112a3b0d2
         home_local_setup_copied: c10d973c084170e7c5c44bfed68dc787
         home_local_setup_desc: 2d196b1ed178ea22a77c551170837e70
@@ -6001,6 +6066,7 @@ checksums:
         home_local_allow_lan_access_desc: 47a826905c99b4a13f24a23fff5b415b
         home_local_auto_start_desc: a8ba4faf1be48373cbb1a84da198c793
         home_local_auto_start_label: b8859a0020a842b9c0bc797cdc868ae8
+        home_local_auto_start_requires_background: 10965092a245b719e291a3e927f83ae8
         home_local_autostart_section: 1070a14f8490cd930893618e4ca21348
         home_local_copy_fix_command: 48699787c17b28bcf5ee74dec6605732
         home_local_error_background_launch: 1b906f82bd3fd3ca997ee4d16a9e876a
@@ -6029,11 +6095,15 @@ checksums:
         home_local_proxy_settings: e4628b0bce2a7ce679d631929870c788
         home_local_proxy_show_url: c10c020d03734bb0ef7cd5a720f330f3
         home_local_proxy_url_label: 29c38960a20a3ee1f0b53d6d377a9040
+        home_local_run_background_desc: d2e373f3247c8d105de29c1d98883afe
+        home_local_run_background_label: 7cf70c2f5a2f377aabe3b6178023387d
         home_local_security_section: b78af4f33cb90832a8b4bc132975205b
         home_local_server_desc: 0d6218b8f6f13aef6014dc456eeb1d64
         home_local_server_password_label: 051f0334416d7359675076620cc335b6
         home_local_server_password_placeholder: 68e575e46a28fc42eb7fd5e38d830126
         home_local_server_title: 6be0b93c16651a84df725a2bbe4c825a
+        home_local_server_username_label: 985ebbd93602f58dc1b30b2e0a3ac591
+        home_local_server_username_placeholder: 74dd16fb6be82a8ba52d54f9640fd6b6
         home_local_setup: f72ccf2b23aa2ed08eb60fe112a3b0d2
         home_local_setup_copied: c10d973c084170e7c5c44bfed68dc787
         home_local_setup_desc: 2d196b1ed178ea22a77c551170837e70

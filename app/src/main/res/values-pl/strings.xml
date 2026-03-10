@@ -457,4 +457,9 @@ Tokeny: ~%4$d -&gt; ~%5$d</string>
     <string name="chat_send_shell">Wyślij polecenie powłoki</string>
     <string name="chat_shell_mode_hold_send_hint">Tryb powłoki aktywny. Przytrzymaj Wyślij, aby wrócić.</string>
     <string name="menu_review_changes">Przejrzyj zmiany</string>
+    <string name="home_local_server_username_label">Nazwa użytkownika serwera</string>
+    <string name="home_local_server_username_placeholder">Pozostaw puste, aby użyć domyślnej nazwy serwera (opencode)</string>
+    <string name="home_local_run_background_label">Uruchom serwer w tle</string>
+    <string name="home_local_run_background_desc">Użyj trybu zadania w tle Termux, aby uruchomić lokalne środowisko</string>
+    <string name="home_local_auto_start_requires_background">Automatyczne uruchamianie wymaga trybu pracy w tle</string>
 </resources>

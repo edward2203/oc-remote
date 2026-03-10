@@ -159,10 +159,22 @@ class SettingsViewModel @Inject constructor(
         initialValue = false,
     )
 
+    val localServerUsername = settingsRepository.localServerUsername.stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(5000),
+        initialValue = "",
+    )
+
     val localServerPassword = settingsRepository.localServerPassword.stateIn(
         scope = viewModelScope,
         started = SharingStarted.WhileSubscribed(5000),
         initialValue = "",
+    )
+
+    val localServerRunInBackground = settingsRepository.localServerRunInBackground.stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(5000),
+        initialValue = true,
     )
 
     val localServerAutoStart = settingsRepository.localServerAutoStart.stateIn(
@@ -321,9 +333,24 @@ class SettingsViewModel @Inject constructor(
         }
     }
 
+    fun setLocalServerUsername(value: String) {
+        viewModelScope.launch {
+            settingsRepository.setLocalServerUsername(value)
+        }
+    }
+
     fun setLocalServerPassword(value: String) {
         viewModelScope.launch {
             settingsRepository.setLocalServerPassword(value)
+        }
+    }
+
+    fun setLocalServerRunInBackground(enabled: Boolean) {
+        viewModelScope.launch {
+            settingsRepository.setLocalServerRunInBackground(enabled)
+            if (!enabled) {
+                settingsRepository.setLocalServerAutoStart(false)
+            }
         }
     }
 
