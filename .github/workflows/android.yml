@@ -24,9 +24,9 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
-    - name: Guardar APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: OpenCode-App
-          path: app/build/outputs/apk/**/*.apk
-          
+      
+    - name: Save APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: OpenCode-App
+        path: app/build/outputs/apk/**/*.apk
